@@ -1,0 +1,27 @@
+// Colors
+$c-primary: #22a6d4;
+$c-secondary: #277e85;
+
+$hero-margin: 60px;
+
+@import url('https://fonts.googleapis.com/css?family=Nunito:200,300,400,400i,700');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
+  line-height: 1.6rem;
+  font-size: 1.6rem;
+  
+  // Global text properties here
+  
+}
