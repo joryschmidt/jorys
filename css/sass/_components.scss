@@ -27,7 +27,7 @@
     &__box:link, &__box:active, &__box:visited, &__box:focus {
       display: flex;
       padding: 0 2.5rem;
-      border-left: 1px solid $c-secondary;
+      border-left: 1px solid black;
       cursor: pointer;
       text-decoration: none;
       outline: none;
@@ -44,6 +44,10 @@
     
     &__box:hover {
       background-color: black;
+      
+      & span {
+        color: white;
+      }
     }
   }
 }
@@ -72,7 +76,8 @@
     margin-bottom: $hero-margin;
     
     &__item {
-      background: rgba($c-primary, 0.4);
+      //background: rgba($c-primary, 0.4);
+      background: white;
       border: 1px solid black;
       display: flex;
       align-items: center;
