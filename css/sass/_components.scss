@@ -12,6 +12,7 @@
   
   &__img {
     width: 8rem;
+    cursor: pointer;
   }
   
   &__desc {
@@ -19,6 +20,7 @@
     font-size: 2rem;
     align-self: center;
     padding: 0 2rem;
+    cursor: pointer;
   }
   
   .nav {
@@ -67,41 +69,6 @@
     text-align: center;
   }
   
-  .projects {
-    display: grid;
-    grid-template-rows: repeat(6, 1fr);
-    width: 15%;
-    height: 35vh;
-    margin: 0 0 0 auto;
-    margin-bottom: $hero-margin;
-    
-    &__item {
-      //background: rgba($c-primary, 0.4);
-      background: white;
-      border: 1px solid black;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all .2s;
-      height: 100%;
-      padding: 1rem;
-      
-      &:hover {
-        cursor: pointer;
-        background: white;
-      }
-    }
-    
-    &__text {
-      font-size: 1.4rem;
-      text-transform: uppercase;
-      color: black;
-    }
-    
-    &__link {
-      text-decoration: none;
-    }
-  }
   
   .bg-video {
     position: absolute;
@@ -118,5 +85,48 @@
       height: 100%;
       object-fit: cover;
     }
+  }
+}
+
+$project-space: 10rem;
+
+.projects {
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: $project-space;
+  margin: $project-space 0;
+  
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  &__item {
+    //background: rgba($c-primary, 0.4);
+    background: white;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .2s;
+    padding: $project-space;
+    
+    &:hover {
+      cursor: pointer;
+      background: white;
+    }
+  }
+  
+  &__text {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    color: black;
+  }
+  
+  &__link {
+    text-decoration: none;
   }
 }
