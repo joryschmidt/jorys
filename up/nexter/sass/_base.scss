@@ -1,0 +1,67 @@
+// COLOR VARIABLES
+$color-primary: #c69963;
+$color-primary-dark: #B28451;
+
+$color-secondary: #101d2c;
+
+$color-grey-light-1: #f9f7f6;
+$color-grey-light-2: #aaa;
+
+$color-grey-dark-1: #54483A;
+$color-grey-dark-2: #6D5D4B;
+
+$color-liked: #bf5656;
+
+// FONT VARIABLES
+$font-primary: 'Nunito', sans-serif;
+$font-display: 'Josefin Sans', sans-serif;
+
+// RESPONSIVE BREAKPOINTS
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == laptop {
+    @media only screen and (max-width: 78.75em) { @content } // 1200px
+  }
+  
+  @if $breakpoint == tablet {
+    @media only screen and (max-width: 63.5em) { @content } // 1000px
+  }
+  
+  @if $breakpoint == tab-port {
+    @media only screen and (max-width: 56.25em) { @content } // 900px
+  }
+  
+  @if $breakpoint == phone-land {
+    @media only screen and (max-width: 50em) { @content } // 800px
+  }
+  
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 37.5em) { @content } // 600px
+  }
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; // 1rem = 10px;
+  
+  @include respond(laptop) {
+    font-size: 50%; // 8px
+  }
+  
+  @include respond(phone) {
+    font-size: 44%; // 7px
+  }
+}
+
+body {
+  font-family: $font-primary;
+  color: $color-grey-dark-2;
+  font-weight: 300;
+  line-height: 1.6;
+}

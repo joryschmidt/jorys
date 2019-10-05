@@ -1,0 +1,201 @@
+.card {
+  
+  // funcionality
+  
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 53rem;
+  
+  &__side {
+    height: 53rem;
+    transition: all 1s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    overflow: hidden;
+    border-radius: $def-border-radius;
+    box-shadow: 0 1.5rem 4rem rgba($black, 0.15);
+    
+    &--front {
+      background-color: $white;
+    }
+      
+    &--back {
+      transform: rotateY(180deg);
+      
+      &-1 {
+        background-image: linear-gradient(to right bottom, $light-yellow, $orange-yellow);
+      }
+      
+      &-2 {
+        background-image: linear-gradient(to right bottom, $light-green, $dark-green);
+      }
+      
+      &-3 {
+        background-image: linear-gradient(to right bottom, $blue, $purple);
+      }
+    }
+  }
+  
+  
+  &:hover &__side--front {
+    transform: rotateY(-180deg);
+  }
+  
+  &:hover &__side--back{
+    transform: rotateY(0deg);
+  }
+  
+  // front styling
+  
+  &__picture {
+    background-size: cover;
+    height: 23rem;
+    background-blend-mode: screen;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);  
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);  
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    
+    &--1 {
+      background-image: linear-gradient(to right bottom, $light-yellow, $orange-yellow), url(../img/nat-5.jpg);
+    }
+    
+    &--2 {
+      background-image: linear-gradient(to right bottom, $light-green, $dark-green), url(../img/nat-6.jpg);
+    }
+    
+    &--3 {
+      background-image: linear-gradient(to right bottom, $blue, $purple), url(../img/nat-7.jpg);
+    }
+  }
+  
+  &__heading {
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: $white;
+    position: absolute;
+    top: 12rem;
+    right: 2rem;
+    text-align: right;
+    width: 85%;
+  }
+  
+  &__heading-span {
+    padding: 1rem 1.5rem;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    
+    &--1 {
+      background-image: linear-gradient(to right bottom, rgba($light-yellow, 0.8), rgba($orange-yellow, 0.8));
+    }
+    
+    &--2 {
+      background-image: linear-gradient(to right bottom, rgba($light-green, 0.8), rgba($dark-green, 0.8));
+    }
+    
+    &--3 {
+      background-image: linear-gradient(to right bottom, rgba($blue, 0.8), rgba($purple, 0.8));
+    }
+  }
+  
+  &__details {
+    padding: 3rem;
+    
+    ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto;
+      
+      li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem;
+        
+        &:not(:last-child) {
+          border-bottom: 1px solid $light-grey-2;
+        }
+      }
+    }
+  }
+  
+  // back styling
+  &__cta {
+    @include center_absolute;
+    width: 90%;
+  }
+  
+  &__price-box {
+    text-align: center;
+    color: $white;
+  }
+  
+  &__price-only {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+  }
+  
+  &__price-value {
+    font-size: 6rem;
+    font-weight: 300;
+    margin-bottom: 6rem;
+  }
+  
+  
+  
+  @media only screen and (max-width: 56.25em), 
+         only screen and (hover: none) { 
+ 
+    position: relative;
+    height: auto;
+    border-radius: $def-border-radius;
+    background-color: $white;
+    box-shadow: 0 1.5rem 4rem rgba($black, 0.15);
+    
+    &__side {
+      height: auto;
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      box-shadow: none;
+        
+      &--back {
+        transform: rotate(0);
+        clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+        border-bottom-left-radius: $def-border-radius;
+        border-bottom-right-radius: $def-border-radius;
+      }
+    }
+    
+    &:hover &__side--front {
+      transform: none;
+    }
+    
+    &__details {
+      padding: 1rem;
+    }
+    
+    // back styling
+    &__cta {
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: translate(0, 0);
+      width: 100%;
+      padding: 7rem 4rem 4rem 4rem;
+    }
+    
+    &__price-box {
+      margin-bottom: 3rem;
+    }
+    
+    &__price-value {
+      font-size: 4rem;
+      margin-bottom: 2rem;
+    }
+  }
+}
