@@ -62,8 +62,10 @@ body {
   flex-direction: column;
   justify-content: space-around; }
   .hero__text {
-    font-size: 4rem;
-    line-height: 4rem;
+    font-size: 8rem;
+    line-height: 8rem;
+    font-weight: 200;
+    margin: 6rem 0;
     text-align: center; }
   .hero .bg-video {
     position: absolute;
@@ -96,14 +98,45 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all .2s;
+    transition: all .2s ease-out;
     padding: 10rem; }
     .projects__item:hover {
       cursor: pointer;
-      background: white; }
+      background: #22a6d4; }
+      .projects__item:hover span {
+        color: white; }
   .projects__text {
     font-size: 1.4rem;
     text-transform: uppercase;
     color: black; }
   .projects__link {
     text-decoration: none; }
+
+.portfolio {
+  display: flex;
+  flex-direction: column; }
+
+.icon {
+  display: inline-block; }
+
+.icon-triangle-down {
+  display: inline-block;
+  width: 1.4rem;
+  height: 1.4rem;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor; }
+
+.category {
+  display: flex;
+  flex-direction: column; }
+  .category__header {
+    font-size: 3rem;
+    line-height: 3rem; }
+  .category__project__link {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit; }
+  .category__project__desc {
+    display: none; }
