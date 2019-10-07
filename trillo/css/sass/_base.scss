@@ -1,0 +1,71 @@
+@mixin respond($breakpoint) {
+  @if $breakpoint == med {
+    @media only screen and (max-width: 56.25em) { @content } // 900px
+  }
+  
+  @if $breakpoint == small {
+    @media only screen and (max-width: 37.5em) { @content } // 600px
+  }
+  
+  @if $breakpoint == tiny {
+    @media only screen and (max-width: 31.25em) { @content } // 500px
+  }
+}
+
+:root {
+  --primary-color: #eb2f64;
+  --primary-color-light: #FF3366;
+  --primary-color-dark: #BA265D;
+  
+  --light-grey-1: #faf9f9;
+  --light-grey-2: #f4f2f2;
+  --light-grey-3: #f0eeee;
+  --light-grey-4: #ccc;
+  
+  --dark-grey-1: #333;
+  --dark-grey-2: #777;
+  --dark-grey-3: #999;
+  
+  --dark-shadow: 0 2rem 6rem rgba(0,0,0, 0.4);
+  --light-shadow: 0 2rem 5rem rgba(0,0,0, 0.1);
+  
+  --border-line: 1px solid var(--light-grey-2);
+}
+
+$break-largest: 75em; //1200px
+$break-large: 68.75em; //1100px
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  
+  font-size: 62.5%;
+  
+  @media only screen and (max-width: $break-large) {
+    font-size: 50%;
+  }
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  
+  color: var(--dark-grey-2);
+  background-image: linear-gradient(to right bottom, var(--primary-color-light), var(--primary-color-dark));
+  background-size: cover;
+  background-repeat: no-repeat;
+  
+  
+  min-height: 100vh;
+}
+
+::selection {
+  color: var(--primary-color);
+  background-color: var(--light-grey-4);
+}

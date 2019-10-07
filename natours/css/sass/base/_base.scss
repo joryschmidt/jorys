@@ -1,0 +1,45 @@
+/* Normalize default browser styles */
+* {
+    @include global_reset;
+}
+
+html {
+    /*Set a root font size as a percentage so the user can change it*/
+    font-size: 62.5%;
+    
+    @include respond(big-desk) {
+        font-size: 75%;
+    }
+    
+    @include respond(tab-land) {
+        font-size: 56.25%;
+    }
+    
+    @include respond(tab-port) {
+        font-size: 50%;
+    }
+}
+
+body {
+    /* inherited properties */
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    // font-size: 16px; The default browser font-size is 16px. The root is changed to 10px for easy conversion with rems
+    line-height: 1.7;
+    color: $dark-grey;
+    
+    /*force inheritance in universal selector*/
+    box-sizing: border-box;
+    
+    /* element only properties */
+    padding: 3rem;
+    
+    @include respond(tab-port) {
+        padding: 0;
+    }
+}
+
+::selection {
+    background-color: $light-green;
+    color: $white;
+}

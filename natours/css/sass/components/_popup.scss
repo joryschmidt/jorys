@@ -1,0 +1,184 @@
+.popup {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+
+  background-color: rgba($black, 0.8);
+  padding-top: 20vh;
+  
+  opacity: 0;
+  visibility: hidden;
+  transition: all .3s;
+  
+  @supports (backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px)) {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background-color: rgba($black, 0.3);
+  }
+  
+  &:target {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  &:target &__content {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  
+  &__close {
+    &:link, &:visited {
+      color: $dark-grey;
+      position: absolute;
+      top: 2rem;
+      right: 3rem;
+      font-size: 3rem;
+      text-decoration: none;
+      display: inline-block;
+      transition: all .2s;
+      line-height: 1;
+      
+      @include respond(tab-port) {
+        color: $black;
+        top: 1rem;
+        right: 1.5rem;
+      }
+    }
+    
+    &:hover {
+      color: $medium-green;
+    }
+  }
+  
+  &__content {
+    @include center_absolute;
+    
+    // This is to prevent a line of white pixels appearing underneath the images in some dimensions
+    background-image: linear-gradient(to right, $black 0%, $black 33.333333%, $white 33.333333%);
+    
+    width: 70%;
+    box-shadow: 0 2rem 3rem rgba($black, .5);
+    border-radius: $def-border-radius;
+    display: table;
+    overflow: hidden;
+    
+    transform: translate(-50%, -50%) scale(0.5);
+    transition: all .3s;
+  }
+  
+  &__left {
+    width: 33.333333%;
+    display: table-cell;
+    background-color: $black;
+  }
+  
+  &__right {
+    width: 66.666667%;
+    display: table-cell;
+    vertical-align: middle;
+    
+    padding: 3rem 5rem;
+  }
+  
+  &__img {
+    display: block;
+    width: 100%;
+  }
+  
+  &__text {
+    font-size: 1.4rem;
+    margin-bottom: 3rem;
+    
+    column-count: 2;
+    column-gap: 4rem;
+    column-rule: 2px solid $light-grey-2;
+    
+    // hyphens: auto;
+  }
+  
+  @include respond(tab-land) {
+    &__left {
+      width: 40%;
+    }
+    
+    &__right {
+      width: 60%;
+      
+      .heading-secondary {
+        font-size: 2.6rem;
+        letter-spacing: 1px;
+        margin: 0;
+      }
+      
+      .heading-tertiary {
+        font-size: 1.4rem;
+      }
+      
+      .btn {
+        font-size: 1.4rem;
+      }
+    }
+    
+    &__text {
+      font-size: 1.3rem;
+      margin-bottom: 3rem;
+      
+      column-count: 1;
+    }
+  }
+  
+  @include respond(tab-port) {
+    
+    &__content {
+      background-image: none;
+      background-color: $white;
+      
+      display: block;
+    }
+    
+    &__left {
+      display: flex;
+      background-color: $white;
+      width: 100%;
+    }
+    
+    &__img {
+      display: inline-block;
+      
+      &__container {
+        width: 50%;
+        
+        &--1 {
+          flex: 1.5005;
+        }
+        
+        &--2 {
+          flex: 1.4535;
+        }
+      }
+    }
+    
+    &__right {
+      display: inline-block;
+      vertical-align: top;
+      width: 100%;
+    }
+  }
+  
+  @include respond(phone) {
+    &__right {
+      
+      padding: 2rem 3rem;
+      
+      .heading-secondary {
+        font-size: 1.7rem;
+      }
+      
+      .heading-tertiary {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}

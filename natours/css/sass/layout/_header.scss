@@ -1,0 +1,109 @@
+.header {
+    height: 85vh;
+    position: relative;
+    
+    background-image: linear-gradient(
+      to right bottom, 
+      rgba($light-green, 0.8), 
+      rgba($dark-green, 0.8)), 
+    url(../img/hero-small.jpg);
+    
+    background-size: cover;
+    background-position: top;
+    
+    @supports (-webkit-clip-path: polygon(0 0)) or (clip-path: polygon(0 0)) {
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+        height: 95vh;
+    }
+    
+    @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em), 
+           only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), 
+           only screen and (min-width: 125em) {
+        background-image: linear-gradient(
+          to right bottom, 
+          rgba($light-green, 0.8), 
+          rgba($dark-green, 0.8)), 
+        url(../img/hero.jpg);
+    }
+    
+    @include respond(phone) {
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    }
+    
+    
+    &__logo-box {
+      position: absolute;
+      top: 4rem;
+      left: 4rem;
+    }
+    
+    &__logo {
+        height: 3.5rem;
+    }
+    
+    &__text-box {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    &__btn {
+        margin-left: 20.1rem;
+        
+        @include respond(phone) {
+            margin-left: 7rem;
+        }
+        
+        /*  rule goes: animation duration timing-function delay */
+        animation: moveInBottom .5s ease-out .2s;
+        /* this property applies the initial animation style to the element before the animation occurs */
+        animation-fill-mode: backwards; 
+    }
+}
+
+.heading-primary {
+    color: $white;
+    text-transform: uppercase;
+    margin-bottom: 6rem;
+    
+    /* text indent offsets the largest letter spacing to center the text in the header text box */
+    text-indent: 3.5rem;
+    
+    
+    /*This is a hack that prevents animation shaking*/
+    /*backface-visibility: hidden;*/
+    
+    &--main {
+        display: block;
+        font-size: 6rem;
+        font-weight: 400;
+        letter-spacing: 3.5rem;
+        
+        @include respond(phone) {
+            letter-spacing: 1rem;
+            font-size: 5rem;
+            text-indent: 1rem;
+        }
+        
+        animation-name: moveInLeft;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+    }
+    
+    &--sub {
+        display: block;
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 1.74rem;
+        
+        @include respond(phone) {
+            letter-spacing: .5rem;
+            text-indent: 2rem;
+        }
+        
+        animation: moveInRight 1s ease-out;
+    }
+}
