@@ -3639,7 +3639,8 @@ input, select, textarea {
 			#contact > .inner > :nth-child(2n - 1) {
 				padding: 4em 3em 2em 0 ;
 				border-right: solid 1px rgba(212, 212, 255, 0.1);
-				width: 60%;
+				border-left: solid 1px rgba(212, 212, 255, 0.1);
+				width: 100%;
 			}
 
 			#contact > .inner > :nth-child(2n) {
@@ -3663,7 +3664,8 @@ input, select, textarea {
 						margin-left: -3em;
 						position: absolute;
 						top: 0;
-						width: calc(100vw + 3em);
+						/*width: calc(100vw + 3em);*/
+						width: 100%
 					}
 
 				#contact > .inner > .split > :first-child:before {
@@ -3679,6 +3681,7 @@ input, select, textarea {
 				#contact > .inner > :nth-child(2n - 1) {
 					padding: 4em 0 2em 0 ;
 					border-right: 0;
+					border-left: 0;
 					width: 100%;
 				}
 
@@ -3691,8 +3694,8 @@ input, select, textarea {
 					padding: 3em 0 1em 0 ;
 				}
 
-				#contact > .inner > .split > :first-child:before {
-					display: block;
+				#contact > .inner > .split > *:before {
+					display: none;
 				}
 
 		}

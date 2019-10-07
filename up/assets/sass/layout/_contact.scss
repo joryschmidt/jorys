@@ -29,8 +29,8 @@
 				padding: 0;
 
 				> * {
-					@include padding(3em, 0, (0, 0, 0, 3em));
-					position: relative;
+					// @include padding(3em, 0, (0, 0, 0, 3em));
+					// position: relative;
 
 					&:before {
 						border-top: solid 1px _palette(border);
