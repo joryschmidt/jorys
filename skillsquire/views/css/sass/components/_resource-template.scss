@@ -1,0 +1,122 @@
+.resource {
+  margin: 1rem;
+  
+  &__template {
+    
+  }
+  
+  &__btn-group {
+    width: 100%;
+    border: $default-border;
+    border-radius: 4px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 4.5fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    
+    & > * {
+      // &:not(:first-child) {
+      //   border-left: $default-border;
+      // }
+      
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      // adjust padding heighten or shorten resource element
+      padding: .8rem;
+      cursor: pointer;
+    }
+  }
+  
+  &__link {
+    width: 100%;
+  }
+  
+  &__name {
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    box-sizing: content-box;
+    background-color: white;
+    
+    &-text {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  
+  &__description {
+    width: 100%;
+    
+    border-left: $default-border;
+    
+    &-text {
+      display: inline-block;
+      font-size: 1.4rem;
+      background-color: white;
+    }
+  }
+  
+  &__add {
+    width: 100%;
+    transform: scale(1.05);
+    overflow: hidden;
+    
+    &--plus {
+      background-color: $blue;
+    }
+    
+    &--checkmark {
+      background-color: $green;
+    }
+  }
+  
+  &__remove {
+    width: 100%;
+    height: 100%;
+    background-color: $red;
+    transform: scale(1.05);
+    overflow: hidden;
+  }
+  
+  &__icon {
+    width: 2rem;
+    height: 2rem;
+    
+    &--cross {
+      fill: $lighter-grey;
+      transform: scale(.8);
+    }
+    
+    &--plus {
+      width: 2rem;
+      height: 2rem;
+      transform: scale(.87) translateY(1px);
+    }
+  }
+  
+  &__details {
+    padding: .7rem;
+    padding-top: .9rem;
+    border-bottom: $default-border;
+    border-right: $default-border;
+    border-left: $default-border;
+    border-radius: 0 0 4px 4px;
+    transform: translateY(-2px);
+    background-color: white;
+  }
+  
+  &__rating {
+    display: inline-block;
+    
+    &-star {
+      width: 1.5rem;
+      height: 1.5rem;
+      fill: $color-star;
+      transform: translateY(2px);
+    }
+  }
+}

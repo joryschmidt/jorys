@@ -17,7 +17,9 @@ var SpotSchema = new Schema({
   }
 });
 
-module.exports = mongoose.model('Spot', SpotSchema);
+var db = mongoose.connection.useDb('openmic');
+
+module.exports = db.model('Spot', SpotSchema);
 
 
 

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="A coding resources hub">
+    <meta name="author" content="Jory Schmidt">
+    
+    <link rel="icon" href="/skillsquire/">
+
+    <title>Syntax Cheatsheet</title>
+    
+    <link rel='stylesheet' href='../css/style.css' />
+    
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body ng-app='syntax'>
+    <div class="csheet-container">
+      <nav class="navbar">
+        <ul class="nav">
+          <a href="/skillsquire/">            <li class="nav__item">Home</li></a>
+          <a href="/skillsquire/#!/about">    <li class="nav__item">About</li></a>
+          <a href="/skillsquire/syntax">      <li class="nav__item">Cheatsheet</li></a>
+          <a href="/skillsquire/#!/dashboard"><li class="nav__item" ng-show="userLoggedIn">Dashboard</li></a>
+          <a href="/skillsquire/#!/login">    <li class="nav__item" ng-hide="userLoggedIn">Login</li></a>
+          <a href="/skillsquire/logout">      <li class="nav__item" ng-show="userLoggedIn">Logout</li> </a>
+          <a href="/skillsquire/#!/signup">   <li class="nav__item" ng-hide="userLoggedIn">Sign Up</li></a>
+          <a href="/skillsquire/admin">       <li class="nav__item" ng-if="userIsAdmin">Admin Panel</li></a>
+        </ul>
+      </nav>
+
+      <h1>Syntax Cheatsheet</h1>
+      <div ng-view></div>
+      
+    </div><!-- /.container -->
+
+
+    <script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
+    
+    <script type="text/javascript" src="syntax.js"></script>
+    <script type="text/javascript" src="controllers/home.controller.js"></script>
+    
+    <script>
+    // This script is to prevent the DOM from being visible before Angular does its thing
+      $(document).ready(function() {
+        window.setTimeout(function() {
+          $('body').css('visibility', 'visible');
+          $('body').fadeTo(200, 1, function(){});
+        }, 200);
+      });
+    </script>
+  </body>
+</html>

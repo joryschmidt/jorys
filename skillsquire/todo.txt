@@ -1,0 +1,20 @@
+Reorder profile resources by drag and drop
+CSRF security, implement with help from angular $http
+Add pagination, probably with Angular maybe with Bootstrap?
+Work on mailer 
+
+Make resource detail view viewable
+
+Add review model and associate to resources
+Make profile view to edit personal details
+move heading styles into own class
+angular slide is a bit wonky. perhaps make it happen with css
+ratings should be included only in review data model
+resource details slide could be link to reviews page
+remove colors from heading
+
+
+Maybes
+
+Make home view checkmark button remove resource
+Make detail view add button symbolic, circular, and works to add and remove resource

@@ -1,0 +1,86 @@
+$banner-margin: 10vh;
+
+.detail {
+  position: relative;
+  
+  &__content {
+    display: flex;
+    position: absolute;
+    top: 20vh;
+    left: 0;
+  }
+  
+  &__logo {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    height: 12vh;
+    z-index: 1;
+  }
+  
+  &__info {
+    
+    &--name {
+      font-size: 4rem;
+      text-align: right;
+    }
+    
+    &--description {
+      font-size: 1.5rem;
+    }
+    
+    &--av-rating {
+      
+    }
+  }
+  
+  &__form {
+    display: flex;
+    flex-direction: column;
+    width: 40rem;
+    margin: 2rem;
+    
+    &__select {
+      align-self: flex-start;
+      width: 10rem;
+      text-align: center;
+      appearance: none;
+      padding: 1rem;
+    }
+    
+    &__textarea {
+      height: 20rem;
+    }
+    
+    &-format-div {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 2rem;
+    }
+    
+    &-container {
+      margin: 2rem;
+      margin-right: 4rem;
+    }
+  }
+  
+  &__banner {
+    width: 100%;
+    height: $banner-margin;
+    background-image: linear-gradient(190deg, transparent 0%, $lightest-grey 90%);
+    float: left;
+    z-index: 0;
+    margin-bottom: 8vh;
+  }
+  
+  &__button {
+    
+    &--form {
+      align-self: flex-start;
+    }
+    
+    &--condit {
+      
+    }
+  }
+}

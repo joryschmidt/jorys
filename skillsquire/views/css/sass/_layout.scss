@@ -1,0 +1,42 @@
+.container {
+  @include container;
+  background-color: $lightest-grey;
+}
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: rgba($dark-grey, 0.9);
+  
+  &__item {
+    list-style: none;
+    padding: 1.5rem 2rem;
+    color: $lighter-grey;
+    transition: background-color .1s;
+    
+    &:hover {
+      background-color: $grey;
+    }
+  }
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 0 2rem;
+  
+  &-category {
+    grid-template-columns: 1fr;
+  }
+}
+
+.category {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  
+  &-heading {
+    padding: 1.5rem 0 0.5rem 1rem;
+  }
+}

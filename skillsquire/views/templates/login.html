@@ -1,0 +1,9 @@
+<div class='login'>
+  <h2 class='login__header'>Login</h2>
+  <form ng-submit="submit()" class='login__form'>
+    <input type='text' name='username' placeholder='Username' ng-model='user.username' class='login__form-input' autofocus />
+    <input type="password" name="password" placeholder="Password" ng-model="user.password" class='login__form-input' />
+    <input type="submit" value="Login" class='btn login__btn' />
+  </form>
+  <a href='/skillsquire/#!/signup'><span class='btn login__btn login__btn--signup'>Don't have an account?</span></a>
+</div>

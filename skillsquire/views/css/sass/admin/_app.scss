@@ -1,0 +1,121 @@
+.admin {
+  
+  &-heading {
+    padding: 3rem;
+  }
+  
+  &-container {
+    @include container;
+  }
+  
+  &-home {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  &-row {
+    
+  }
+  
+  // the queue
+  &-queue {
+    
+    &__resource {
+      
+      &--btn {
+        background-color: $light-blue;
+      }
+    }
+  }
+  
+  // Create new admin page
+  &-create {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    width: 50%;
+    
+    &__input {
+      @include form_style;
+    }
+  }
+}
+
+.resource {
+  
+  // resource create/edit page
+  &__form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  &-metadata {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    &__input {
+      @include form_style;
+    }
+  }
+  
+  &-description {
+    
+    &__text {
+      width: 35rem;
+      height: 10rem;
+    }
+    
+    &__long-text {
+      width: 35rem;
+      height: 20rem;
+    }
+  }
+  
+  &-categories {
+    display: flex;
+    flex-wrap: wrap;
+    
+    // perhaps make a custom checkbox later, for funsies
+    &__label {
+      
+      &-text {
+        
+      }
+    }
+    
+    &__checkbox {
+      
+    }
+    
+    &__category {
+      margin: 0 5px;
+    }
+  }
+  
+  &-new-category {
+    @include form_style;
+  }
+  
+  
+  // Delete resource page
+  &-delete {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    
+    &__resource {
+      
+      &--item {
+        display: flex;
+        align-items: center;
+      }
+    }
+    
+    &__name {
+      
+    }
+  }
+  
+}

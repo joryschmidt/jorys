@@ -1,0 +1,78 @@
+.dashboard {
+  
+  padding-top: 2rem;
+  
+  display: grid;
+  grid-template-columns: 25rem repeat(2, 1fr);
+  
+  
+  &__heading {
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+  
+  &__user-info {
+    justify-self: center;
+    
+    &:last-child {
+      margin-top: 1rem;
+    }
+    
+    &__data {
+      padding: 0 .5rem;
+    }
+  }
+  
+  #user-info-email {
+    margin-bottom: 2rem;
+  }
+  
+  &__resource {
+    display: inline-block;
+    width: 100%;
+    
+    .resource__btn-group {
+      margin: .5rem 0;
+      
+      & > * {
+        // change this padding to adjust size of dashboard resources
+        //padding: 1rem;
+      }
+    }
+    
+    .resource__details {
+      transform: translateY(-5px);
+    }
+  }
+  
+  &__resources {
+    padding: 2rem;
+  }
+  
+  &__resource-list {
+    
+  }
+  
+  &__custom {
+    
+    &-add {
+      margin-top: 2rem;
+      
+      &-text {
+        letter-spacing: 1px;
+      }
+    }
+    
+    &-form {
+      
+      &__btn {
+        margin: 1rem;
+        color: black;
+      }
+    }
+    
+    &__input {
+      @include form_style;
+    }
+  }
+}

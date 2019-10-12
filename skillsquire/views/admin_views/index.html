@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="A coding resources hub">
+    <meta name="author" content="Jory Schmidt">
+    
+    <link rel="icon" href="">
+
+    <title>SSQ Admin Panel</title>
+    
+    <link rel='stylesheet' href='../css/style.css' />
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body ng-app='admin'>
+      <nav class="navbar">
+        <ul class="nav">
+          <a href="/skillsquire/">            <li class="nav__item">SSQ Home</li></a>
+          <a href="/skillsquire/syntax">      <li class="nav__item">Cheatsheet</li></a>
+          <a href="/skillsquire/admin/">      <li class="nav__item">Admin Panel</li></a>
+        </ul>
+      </nav>
+
+      <h1 class="admin-heading">Admin Panel</h1>
+      
+      <div class="admin-container">
+        <div ng-view></div>
+      </div>
+      
+    </div><!-- /.container -->
+
+
+    <script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
+    
+    <script type="text/javascript" src="admin.js"></script>
+    <script type="text/javascript" src="controllers/home.controller.js"></script>
+    <script type="text/javascript" src="controllers/create.admin.controller.js"></script>
+    <script type="text/javascript" src="controllers/resource.controller.js"></script>
+    <script type="text/javascript" src="controllers/resource.edit.controller.js"></script>
+    
+    <script>
+    // This script is to prevent the DOM from being visible before Angular does its thing
+      $(document).ready(function() {
+        $('body').css({ visibility: 'visible', opacity: 1 });
+      });
+    </script>
+  </body>
+</html>

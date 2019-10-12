@@ -1,0 +1,59 @@
+.banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .5rem 2rem;
+}
+
+.radio {
+    
+  &-group {
+    
+  }
+  
+  &-label {
+    position: relative;
+    cursor: pointer;
+    padding-left: 2.5rem;
+  }
+  
+  &-btn {
+    display: inline-block;
+    position: absolute;
+    height: 2rem;
+    width: 2rem;
+    border: 3px solid black;
+    border-radius: 50%;
+    top: 2px;
+    left: 0;
+    
+    &::after {
+      content: "";
+      display: block;
+      height: 1rem;
+      width: 1rem;
+      background-color: black;
+      border-radius: 50%;
+      opacity: 0;
+      transition: opacity .2s;
+      
+      @include center_absolute;
+    }
+  }
+  
+  &-input:checked + &-label &-btn::after {
+    opacity: 1;
+  }
+  
+  &-input {
+    display: none;
+  }
+  
+  &-description {
+    
+  }
+}
+
+.organization {
+  margin-top: 1rem;
+}

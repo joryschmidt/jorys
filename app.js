@@ -8,22 +8,14 @@ var sass = require('node-sass-middleware');
 var sessions = require('client-sessions');
 
 
-var db = 'mongodb://' + process.env.IP + '/openmic';
+var db = 'mongodb://' + process.env.IP + '/default';
 
 mongoose.Promise = bluebird;
 mongoose.connect(process.env.MONGODB_URI || db, { useNewUrlParser: true, useUnifiedTopology: true });
 
 var app = express();
 
-// Middleware for Sass, session functionality, and req.body
-app.use(sass({
-  src: path.join(__dirname, 'views/css/sass'),
-  dest: path.join(__dirname, 'views/css'),
-  debug: false,
-  outputStyle: 'expanded',
-  prefix: '/css'
-}));
-
+// Middleware for session functionality, and req.body
 app.use(sessions({
   cookieName: 'session',
   secret: process.env.OPENMIC_SESSION,
@@ -36,8 +28,28 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 
 
+// Skillsquire Routes
+
+var skillsquire_main = require('./routes/skillsquire/main');
+var skillsquire_admin = require('./routes/skillsquire/admin');
+var skillsquire_resource = require('./routes/skillsquire/resource');
+var skillsquire_user = require('./routes/skillsquire/user');
+
+
+app.use('/skillsquire', express.static(path.join(__dirname, 'skillsquire', 'views')));
+app.use('/skillsquire/admin', requireAdmin, express.static(path.join(__dirname, 'skillsquire', 'views/admin_views')));
+app.use('/skillsquire/syntax', express.static(path.join(__dirname, 'skillsquire', 'views/syntax')));
+
+app.use('/skillsquire/admin', requireAdmin, skillsquire_admin);
+app.use('/skillsquire/resource', skillsquire_resource);
+app.use('/skillsquire/user', requireLogin, skillsquire_user);
+app.use('/skillsquire', skillsquire_main);
+
+
 
 // OPEM Routes
+
+
 
 var opem_main = require('./routes/opem/main');
 var opem_admin = require('./routes/opem/admin');

@@ -1,0 +1,75 @@
+<!--icons from icomoon-->
+
+<svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<symbol id="icon-home3" viewBox="0 0 32 32">
+<title>home3</title>
+<path d="M32 19l-6-6v-9h-4v5l-6-6-16 16v1h4v10h10v-6h4v6h10v-10h4z"></path>
+</symbol>
+<symbol id="icon-menu" viewBox="0 0 32 32">
+<title>menu</title>
+<path d="M2 6h28v6h-28zM2 14h28v6h-28zM2 22h28v6h-28z"></path>
+</symbol>
+<symbol id="icon-menu3" viewBox="0 0 44 32">
+<title>menu3</title>
+<path d="M0 6h28v6h-28v-6zM0 14h28v6h-28v-6zM0 22h28v6h-28v-6z"></path>
+<path d="M31 14l6 6 6-6z"></path>
+</symbol>
+<symbol id="icon-plus" viewBox="0 0 32 32">
+<title>plus</title>
+<path d="M31 12h-11v-11c0-0.552-0.448-1-1-1h-6c-0.552 0-1 0.448-1 1v11h-11c-0.552 0-1 0.448-1 1v6c0 0.552 0.448 1 1 1h11v11c0 0.552 0.448 1 1 1h6c0.552 0 1-0.448 1-1v-11h11c0.552 0 1-0.448 1-1v-6c0-0.552-0.448-1-1-1z"></path>
+</symbol>
+<symbol id="icon-cross" viewBox="0 0 32 32">
+<title>cross</title>
+<path d="M31.708 25.708c-0-0-0-0-0-0l-9.708-9.708 9.708-9.708c0-0 0-0 0-0 0.105-0.105 0.18-0.227 0.229-0.357 0.133-0.356 0.057-0.771-0.229-1.057l-4.586-4.586c-0.286-0.286-0.702-0.361-1.057-0.229-0.13 0.048-0.252 0.124-0.357 0.228 0 0-0 0-0 0l-9.708 9.708-9.708-9.708c-0-0-0-0-0-0-0.105-0.104-0.227-0.18-0.357-0.228-0.356-0.133-0.771-0.057-1.057 0.229l-4.586 4.586c-0.286 0.286-0.361 0.702-0.229 1.057 0.049 0.13 0.124 0.252 0.229 0.357 0 0 0 0 0 0l9.708 9.708-9.708 9.708c-0 0-0 0-0 0-0.104 0.105-0.18 0.227-0.229 0.357-0.133 0.355-0.057 0.771 0.229 1.057l4.586 4.586c0.286 0.286 0.702 0.361 1.057 0.229 0.13-0.049 0.252-0.124 0.357-0.229 0-0 0-0 0-0l9.708-9.708 9.708 9.708c0 0 0 0 0 0 0.105 0.105 0.227 0.18 0.357 0.229 0.356 0.133 0.771 0.057 1.057-0.229l4.586-4.586c0.286-0.286 0.362-0.702 0.229-1.057-0.049-0.13-0.124-0.252-0.229-0.357z"></path>
+</symbol>
+<symbol id="icon-checkmark" viewBox="0 0 32 32">
+<title>checkmark</title>
+<path d="M27 4l-15 15-7-7-5 5 12 12 20-20z"></path>
+</symbol>
+<symbol id="icon-star-full" viewBox="0 0 32 32">
+<title>star-full</title>
+<path d="M32 12.408l-11.056-1.607-4.944-10.018-4.944 10.018-11.056 1.607 8 7.798-1.889 11.011 9.889-5.199 9.889 5.199-1.889-11.011 8-7.798z"></path>
+</symbol>
+<symbol id="icon-arrow-up-left" viewBox="0 0 32 32">
+<title>arrow-up-left</title>
+<path d="M0 23l8-8 17 17 7-7-17-17 8-8h-23v23z"></path>
+</symbol>
+<symbol id="icon-arrow-up" viewBox="0 0 32 32">
+<title>arrow-up</title>
+<path d="M16 1l-15 15h9v16h12v-16h9z"></path>
+</symbol>
+<symbol id="icon-arrow-up-right" viewBox="0 0 32 32">
+<title>arrow-up-right</title>
+<path d="M9 0l8 8-17 17 7 7 17-17 8 8v-23h-23z"></path>
+</symbol>
+<symbol id="icon-arrow-right" viewBox="0 0 32 32">
+<title>arrow-right</title>
+<path d="M31 16l-15-15v9h-16v12h16v9z"></path>
+</symbol>
+<symbol id="icon-arrow-left" viewBox="0 0 32 32">
+<title>arrow-left</title>
+<path d="M1 16l15 15v-9h16v-12h-16v-9z"></path>
+</symbol>
+<symbol id="icon-arrow-up-left2" viewBox="0 0 32 32">
+<title>arrow-up-left2</title>
+<path d="M27.414 24.586l-16.586-16.586h7.172c1.105 0 2-0.895 2-2s-0.895-2-2-2h-12c-0.809 0-1.538 0.487-1.848 1.235-0.103 0.248-0.151 0.508-0.151 0.765h-0.001v12c0 1.105 0.895 2 2 2s2-0.895 2-2v-7.172l16.586 16.586c0.39 0.391 0.902 0.586 1.414 0.586s1.024-0.195 1.414-0.586c0.781-0.781 0.781-2.047 0-2.828z"></path>
+</symbol>
+<symbol id="icon-arrow-up2" viewBox="0 0 32 32">
+<title>arrow-up2</title>
+<path d="M27.414 12.586l-10-10c-0.781-0.781-2.047-0.781-2.828 0l-10 10c-0.781 0.781-0.781 2.047 0 2.828s2.047 0.781 2.828 0l6.586-6.586v19.172c0 1.105 0.895 2 2 2s2-0.895 2-2v-19.172l6.586 6.586c0.39 0.39 0.902 0.586 1.414 0.586s1.024-0.195 1.414-0.586c0.781-0.781 0.781-2.047 0-2.828z"></path>
+</symbol>
+<symbol id="icon-arrow-up-right2" viewBox="0 0 32 32">
+<title>arrow-up-right2</title>
+<path d="M7.414 27.414l16.586-16.586v7.172c0 1.105 0.895 2 2 2s2-0.895 2-2v-12c0-0.809-0.487-1.538-1.235-1.848-0.248-0.103-0.508-0.151-0.765-0.151v-0.001h-12c-1.105 0-2 0.895-2 2s0.895 2 2 2h7.172l-16.586 16.586c-0.391 0.39-0.586 0.902-0.586 1.414s0.195 1.024 0.586 1.414c0.781 0.781 2.047 0.781 2.828 0z"></path>
+</symbol>
+<symbol id="icon-arrow-right2" viewBox="0 0 32 32">
+<title>arrow-right2</title>
+<path d="M19.414 27.414l10-10c0.781-0.781 0.781-2.047 0-2.828l-10-10c-0.781-0.781-2.047-0.781-2.828 0s-0.781 2.047 0 2.828l6.586 6.586h-19.172c-1.105 0-2 0.895-2 2s0.895 2 2 2h19.172l-6.586 6.586c-0.39 0.39-0.586 0.902-0.586 1.414s0.195 1.024 0.586 1.414c0.781 0.781 2.047 0.781 2.828 0z"></path>
+</symbol>
+<symbol id="icon-arrow-left2" viewBox="0 0 32 32">
+<title>arrow-left2</title>
+<path d="M12.586 27.414l-10-10c-0.781-0.781-0.781-2.047 0-2.828l10-10c0.781-0.781 2.047-0.781 2.828 0s0.781 2.047 0 2.828l-6.586 6.586h19.172c1.105 0 2 0.895 2 2s-0.895 2-2 2h-19.172l6.586 6.586c0.39 0.39 0.586 0.902 0.586 1.414s-0.195 1.024-0.586 1.414c-0.781 0.781-2.047 0.781-2.828 0z"></path>
+</symbol>
+</defs>
+</svg>

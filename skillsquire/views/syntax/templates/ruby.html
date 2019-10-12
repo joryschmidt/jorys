@@ -1,0 +1,82 @@
+<div class='ruby syntax'>
+<h2>Ruby</h2>
+<h4>Hello World</h4>
+<pre><code>
+puts 'hello world'
+
+print "hello world\n"
+</code></pre>
+<h4>Function Definition</h4>
+<pre><code>
+def hello_world
+  puts "hello world"
+end
+</code></pre>
+<h4>For Loop</h4>
+<pre><code>
+for n in 0..9
+  puts n
+end
+
+10.times do |n|
+  puts n
+end
+</code></pre>
+<h4>While Loop</h4>
+<pre><code>
+count = 0
+while count < 10 do
+  puts count
+  count += 1
+end
+
+begin
+  < code >
+end while < conditional >
+
+< code > while < conditional >
+</code></pre>
+<h4>Conditionals</h4>
+<pre><code>
+if < conditional >
+  # Do something
+elsif < conditional >
+  # Do something else
+else
+  # Do default
+end
+
+< code > if < conditional >
+# unless and until are also keywords
+</code></pre>
+<h4>Case Statement</h4>
+<pre><code>
+food = 'veggies'
+case
+when food == 'fruit'
+  < code >
+when food == 'veggies'
+  < code ran >
+else
+  < code >
+end
+
+g = case year
+    when 1950..1969 then 'Classic'
+    when 1970..1989 then 'Retro'
+    else 'Modern'
+    end
+</code></pre>
+<h4>And, Or, Not Operators</h4>
+<pre><code>
+high precedence
+  && || !
+low precedence
+  and or not
+</code></pre>
+<h4>Strings</h4>
+<pre><code>
+"" OR ''
+name = 'world'
+print "hello #{name}\n"
+</code></pre>

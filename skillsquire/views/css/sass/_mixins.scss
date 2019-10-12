@@ -1,0 +1,27 @@
+@mixin center_absolute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin container {
+  width: 120rem;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding-bottom: 30rem;
+}
+
+@mixin form_style {
+  &, &:focus, &:active {
+    width: 75%;
+    padding: 1rem;
+    margin: .5rem;
+    transition: background-color 0.1s;
+    border: 1px solid $grey;
+  }
+  
+  &:focus {
+    background-color: $lighter-grey;
+  }
+}

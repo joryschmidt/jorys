@@ -1,5 +1,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
+var Queue = require('./Queue.model');
+var QueueSchema = Queue.schema;
 
 var UserSchema = new Schema({
   username: {
@@ -12,26 +14,30 @@ var UserSchema = new Schema({
     type: String,
     required: true,
     unique: true,
-    trim: true,
-    lowercase: true
+    trim: true
   },
   password: {
     type: String,
     required: true
   },
-  created: {
-    type: Date,
-    default: Date.now
+  points: {
+    type: Number,
+    default: 0
   },
   admin: {
     type: Boolean,
     default: false
   },
-  events: [{ type: Schema.ObjectId, ref: 'Event' }],
-  hosted_events: [{ type: Schema.ObjectId, ref: 'Event' }],
-  gravatar: String
+  joined: {
+    type: Date,
+    default: Date.now
+  },
+  resourceList: [{ type: Schema.ObjectId, ref: 'Resource' }],
+  customResourceList: [QueueSchema],
+  ratings: {},
+  reviews: [{ type: Schema.ObjectId, ref: 'Review' }]
 });
 
-var db = mongoose.connection.useDb('openmic');
+var db = mongoose.connection.useDb('ssq');
 
 module.exports = db.model('User', UserSchema);

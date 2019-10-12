@@ -1,0 +1,13 @@
+
+Just in case the production server encounters difficulty keeping the queue unique 
+db.queues.createIndex({className: 1}, {unique: true})
+
+This may also work in the Queue model file
+QueueSchema.index({ className: 1 }, { unique: true});
+
+Removed this from boostrap.min.css because the firefox error was driving me crazy
+/*# sourceMappingURL=bootstrap.min.css.map */
+
+Stuff to delete later
+MDBootstrap 
+bootstrap-confirmation

@@ -1,0 +1,42 @@
+<!-- There's some weird indentation going on that I'm not a fan of, but since I can't nest forms this is 
+      how it's gotta be to look the way I want because I don't want to reconfigure the addCategory form -->
+      
+<h2>Create New Resource</h2>
+<div class='admin-row'>
+  <form class='resource__form' ng-submit='submit()'>
+    <div class='resource-metadata'>
+      <input type='text' name='name' placeholder='Name' ng-model='resource.name' class='resource-metadata__input resource-metadata--name' />
+      <input type='text' name='link' placeholder='Link' ng-model='resource.link' class='resource-metadata__input resource-metadata--link' />
+      <input type='text' name='color' placeholder='Brand Color' ng-model='resource.color' class='resource-metadata__input resource-metadata--color' />
+      <input type='text' name='logo' placeholder='Logo Link' ng-model='resource.logo' class='resource-metadata__input resource-metadata--logo' />
+      <input type='submit' value='Create Resource' class='btn btn--admin' />
+    </div>
+    
+    <div class='resource-description'>
+      <textarea name='description' placeholder='Description' ng-model='resource.description' class='resource-description__text'></textarea><br />
+      <textarea name='long_description' placeholder='Detailed Description' ng-model='resource.long_description' class='resource-description__long-text'></textarea>
+    </div>
+    
+    <div class='resource-categories'>
+      <div class='resource-categories__category' ng-repeat='(cat, selected) in categories'>
+        <input type='checkbox' value='cat' name='cat' id='{{ cat }}' ng-model='categories[cat]' class='resource-categories__checkbox' /> 
+        <label for='{{ cat }}' class='resource-categories__label'>
+          <span class="resource-categories__label-text">{{ cat }}</span>
+        </label>
+      </div>
+  </form>
+  
+  <form ng-submit='addNewCategory()'>
+    <input type='text' name='new-category' placeholder='Add New Category' ng-model='newCat' class='resource-new-category' />
+    <input type='submit' value='Add Category' class='btn btn--admin' />
+  </form>
+</div>
+
+<h2>New user resources queue</h2>
+
+<div class='admin-queue' ng-repeat="q in queue"> 
+  <div class='admin-queue__resource'>
+    <span>{{ q.name }}&nbsp <a class='admin-queue__resource--link' target="_blank" rel='noopener' href='{{ q.link }}'>{{ q.link }}</a> &nbsp{{ q.user }}&nbsp</span>
+    <div class='admin-queue__resource--btn btn' ng-click='removeQItem(q._id)'>OK</div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div class='resource__btn-group'>
+  <a class='resource__link' id='{{ rsc.className }}Color' ng-href='{{ rsc.link }}' style="background-color: {{ rsc.color }};" target='_blank' rel='noopener'>
+    <span class="resource__link-space"></span>
+  </a>
+  <a class='resource__name' id='{{ rsc.className }}' ng-href='{{ rsc.link }}'>
+    <span class="resource__name-text">{{ rsc.name }}</span>
+  </a>
+  
+  <div class='resource__description' ng-click='expand = !expand'>
+    <svg class="resource__icon"><use xlink:href="css/sprite.svg#icon-menu"></use></svg>
+  </div>
+  
+  <div class='resource__remove' id='{{ rsc.className }}Remove' ng-click='removeRsc(rsc._id)'>
+    <svg class="resource__icon resource__icon--cross">
+      <use xlink:href='css/sprite.svg#icon-cross'></use>
+    </svg>
+  </div>
+</div>
+
+<div class='resource__details slide' ng-show='expand'>
+  <div class='resource__rating'>
+    <span ng-if='rsc.rating'><svg ng-repeat='i in [].constructor(roundRating(rsc.rating)) track by $index' class='resource__rating-star'><use xlink:href="css/sprite.svg#icon-star-full"></use></svg> &ndash; </span>
+    <span ng-if='!rsc.rating'>Not yet rated &ndash; </span>
+  </div>
+  <div class='resource__description-text'>{{ rsc.description }}</div>
+</div>

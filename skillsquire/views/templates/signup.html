@@ -1,0 +1,12 @@
+<div class='signup'>
+  <h2 class='signup__header'>Sign Up</h2>
+  <form ng-submit='submit()' class='signup__form'>
+    <div id='err_message' class='signup__form__err-message'></div>
+    <input type="text" name="username" placeholder= "Username" ng-model='user.username'                     class='signup__form-input' autofocus />
+    <input type="email" name="email" placeholder="Email" ng-model='user.email'                              class='signup__form-input' />
+    <input type="password" name="password" placeholder="Password" ng-model='user.password'                  class='signup__form-input' />
+    <input type="password" name="confirmation" placeholder="Confirm Password" ng-model='user.confirmation'  class='signup__form-input' />
+    <input type="submit" value="Submit" class='btn signup__btn' />
+  </form>
+  <a href='/skillsquire/#!/login'><span class='btn signup__btn signup__btn--login'>Already have an account?</span></a>
+</div>

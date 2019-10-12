@@ -1,0 +1,79 @@
+.about {
+  
+  &__heading {
+    padding-left: 3rem;
+    margin-top: 1rem;
+    margin-bottom: 5rem;
+  }
+  
+  &__content {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 2rem;
+  }
+  
+  &__copy {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    width: 35%;
+    
+    &-text {
+      margin-bottom: 3rem;
+      text-align: justify;
+      font-size: 1.8rem;
+    }
+    
+  }
+  
+  &__example {
+    width: 50%;
+    margin: 0 auto;
+    
+    .resource__btn-group {
+      
+      & > * {
+        padding: 2.5rem;
+      }
+    }
+  }
+  
+  &__descriptor {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+    
+    display: flex;
+    justify-content: center;
+    
+    &-section {
+      display: flex;
+      flex-direction: column;
+      width: 30%;
+      padding: 1rem;
+      
+      .svgs {
+        display: flex;
+        justify-content: space-between;
+      }
+      
+      &-large {
+        width: 50%;
+      }
+      
+      &:last-child {
+        align-items: flex-end;
+        width: 20%;
+      }
+    }
+    
+    &-text {
+      font-size: 1.2rem;
+    }
+  }
+  
+  &__icon {
+    height: 4rem;
+    width: 4rem;
+  }
+}

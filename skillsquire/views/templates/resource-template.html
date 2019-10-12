@@ -1,0 +1,34 @@
+<div class='resource__template'>
+  <div class='resource__btn-group'>
+    <a class='resource__link' id='{{ rsc.className }}Color' ng-href='{{ rsc.link }}' style="background-color: {{ rsc.color }};" target='_blank' rel='noopener'>
+      <span class="resource__link-space"></span>
+    </a>
+    <a class='resource__name' id='{{ rsc.className }}' ng-href='/skillsquire/#!/detail/{{ rsc._id }}'>
+      <span class="resource__name-text">{{ rsc.name }}</span>
+    </a>
+    
+    <div class='resource__description' ng-click='expand = !expand'>
+      <svg class="resource__icon"><use xlink:href="css/sprite.svg#icon-menu"></use></svg>
+    </div>
+    
+    <div class='resource__add resource__add--plus' ng-if='userLoggedIn && !userHasResource(rsc)' id='{{ rsc.className }}Add' ng-click='addRsc(rsc._id)'>
+      <svg class="resource__icon resource__icon--plus"><use xlink:href="css/sprite.svg#icon-plus"></use></svg>
+    </div>
+    
+    <div class='resource__add resource__add--checkmark' ng-if='userLoggedIn && userHasResource(rsc)' id='{{ rsc.className }}Added' ng-click='removeRsc(rsc._id)'>
+      <svg class="resource__icon resource__icon--checkmark"><use xlink:href="css/sprite.svg#icon-checkmark"></use></svg>
+    </div>
+    
+    <a class='resource__add resource__add--plus' ng-if='!userLoggedIn' id='{{ rsc.className }}Add' href='/skillsquire/#!/login'>
+      <svg class="resource__icon resource__icon--plus"><use xlink:href="css/sprite.svg#icon-plus"></use></svg>
+    </a>
+  </div>
+  
+  <div class='resource__details slide' ng-show='expand'>
+    <div class='resource__rating'>
+      <span ng-if='rsc.rating'><svg ng-repeat='i in [].constructor(roundRating(rsc.rating)) track by $index' class='resource__rating-star'><use xlink:href="css/sprite.svg#icon-star-full"></use></svg> &ndash; </span>
+      <span ng-if='!rsc.rating'>Not yet rated &ndash; </span>
+    </div>
+    <div class='resource__description-text'>{{ rsc.description }}</div>
+  </div>
+</div>

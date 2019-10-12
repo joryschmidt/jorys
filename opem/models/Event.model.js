@@ -85,4 +85,6 @@ var EventSchema = new Schema({
   }
 });
 
-module.exports = mongoose.model('Event', EventSchema);
+var db = mongoose.connection.useDb('openmic');
+
+module.exports = db.model('Event', EventSchema);

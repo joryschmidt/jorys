@@ -1,0 +1,70 @@
+<div class="banner">
+  <a href='/skillsquire'>
+    <span class="heading-home">
+      <span class="heading-home--main">SkillSquire</span>
+    <span class="heading-home--sub">A coding resources hub</span>
+    </span>
+  </a>
+  
+  <div class='organization' ng-init='homeRadio="all"'>
+    <div class="radio-group">
+      <input id='homeRadioAll' name="homeRadio" ng-model='homeRadio' type="radio" value='all' class="radio-input" />
+      <label for='homeRadioAll' class="radio-label">
+        <span class="radio-btn"></span>
+        <span class="radio-description">All Resources</span>
+      </label>
+    </div>
+    
+    <div class="radio-group">
+      <input id='homeRadioCat' name="homeRadio" ng-model='homeRadio' type="radio" value='cat' class="radio-input" />
+      <label for='homeRadioCat' class="radio-label">
+        <span class="radio-btn"></span>
+        <span class="radio-description">By Category</span>
+      </label>
+    </div>
+  </div>
+</div>
+
+
+
+<div class='content' ng-if='homeRadio == "all"'>
+  <div class='content__column'> 
+    <div class='resource' ng-repeat="rsc in resources" ng-if='$index % 3 == 0'>
+      <resource-template></resource-template>
+    </div>
+  </div>
+  <div class='content__column'> 
+    <div class='resource' ng-repeat="rsc in resources" ng-if='($index - 1) % 3 == 0'>
+      <resource-template></resource-template>
+    </div>
+  </div>
+  <div class='content__column'> 
+    <div class='resource' ng-repeat="rsc in resources" ng-if='($index - 2) % 3 == 0'>
+      <resource-template></resource-template>
+    </div>
+  </div>
+</div>
+
+<div class='content content-category' ng-if='homeRadio == "cat"'>
+  <div class='category-header' ng-repeat="category in categories">
+    <h3 class='category-heading'>{{ category }}</h3>
+    <hr />
+    <div class="category">
+      <div class='content__column content-category__column'>
+        <div class='resource' ng-repeat="rsc in cat_rscs[category]" ng-if='$index % 3 == 0'>
+          <resource-template></resource-template>
+        </div>
+      </div>
+      <div class='content__column content-category__column'>
+        <div class='resource' ng-repeat="rsc in cat_rscs[category]" ng-if='($index - 1) % 3 == 0'>
+          <resource-template></resource-template>
+        </div>
+      </div>
+      <div class='content__column content-category__column'>
+        <div class='resource' ng-repeat="rsc in cat_rscs[category]" ng-if='($index - 2) % 3 == 0'>
+          <resource-template></resource-template>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

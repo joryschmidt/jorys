@@ -1,0 +1,42 @@
+<div class="detail">
+  <div class='detail__banner' style='background-color: {{ resource.color }};'></div>
+  <a href='{{ resource.link }}'><img class='detail__logo' ng-src='{{ resource.logo }}' /></a>
+  
+  <div class='detail__content'>
+    <div class='detail__form-container'>
+      <span class='detail__form-heading'>Leave a Review!</span>
+      <form class='detail__form' ng-submit='submit()'>
+        <textarea class='detail__form__textarea' name="newReview" id="newReview" ng-model='newReview.text' placeholder="Say what's in your heart"></textarea>
+        <div class="detail__form-format-div">
+          <select class='detail__form__select' name='rating' id='rating' ng-model='newReview.rating'>
+            <option value='1'>1 Star</option>
+            <option value='2'>2 Stars</option>
+            <option value='3'>3 Stars</option>
+            <option value='4'>4 Stars</option>
+            <option value='5'>5 Stars</option>
+          </select>
+          <input type='submit' value='Submit Review' class='detail__button detail__button--form btn' />
+        </div>
+      </form>
+      <!--edit resource button for admins-->
+      <span class='detail__button detail__button--condit btn' ng-if='userIsAdmin' ng-click='editResource()'>Edit Resource</span>
+      
+      <!--add to dashboard button for users-->
+      <span class='detail__button detail__button--condit btn' ng-if='rootUser' ng-click='addToDashboard()'>Add to my dashboard</span>
+    </div>
+    
+    <div class='detail__info'>
+      <span class='detail__info--name heading'><a href="{{ resource.link }}">{{ resource.name }}</a></span>
+      <div id='detail__info--av-rating'>
+        <span ng-repeat="i in [].constructor(data.database_rating) track by $index" class='detail__stars'>
+          <svg class='detail__star resource__icon'>
+            <use xlink:href='css/sprite.svg#icon-star-full'></use>
+          </svg>
+        </span>
+      </div>
+      <span class="detail__info--description">
+        {{ resource.long_description }}
+      </span>
+    </div>
+  </div>
+</div>

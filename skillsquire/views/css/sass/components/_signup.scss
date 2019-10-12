@@ -1,0 +1,35 @@
+.signup {
+  width: 40%;
+  margin: 0 auto;
+  padding-top: 3rem;
+  
+  &__header {
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 2px;
+  }
+  
+  &__form {
+    display: flex;
+    flex-direction: column;
+    
+    &__err-message {
+      
+    }
+    
+    &-input {
+      @include form_style;
+    }
+  }
+  
+  &__btn {
+    align-self: flex-start;
+    background-color: $green;
+    margin: 1.5rem;
+    color: $dark-grey;
+    
+    &--login {
+      background-color: $light-blue;
+    }
+  }
+}

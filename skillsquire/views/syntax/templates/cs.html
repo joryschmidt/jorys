@@ -1,0 +1,96 @@
+<div class='c# syntax'>
+<h2>C#</h2>
+<h4>Hello World</h4>
+<pre><code>
+class HelloWord
+{
+    static void Main()
+    {
+        System.Console.Write("hello world");
+    }
+}
+</code></pre>
+<h4>While Loop</h4>
+<pre><code>
+class WhileLoop
+{
+    static void Main()
+    {
+        int count = 0;
+        while(count < 10)
+        {
+            System.Console.Write(count);
+        }
+    }
+}
+</code></pre>
+<h4>Inheritance</h4>
+<pre><code>
+namespace Inheritance
+{
+    class Polygon
+    {
+        public readonly int NumSides;
+        public Polygon(numSides)
+        {
+            NumSides = numSides;
+        }
+    }
+    
+    class Square
+    {
+        public Square() : base(4)
+        {
+            
+        }
+    }
+    System.Console.WriteLine(Square is Polygon); // prints True
+}
+</code></pre>
+<h4>Classes</h4>
+<pre><code>
+class Person
+{
+    // Fields
+    public readonly string FirstName;
+    public readonly string LastName;
+    private string _phonenumber;
+    
+    // Constructor
+    Person(string first, string last, int phone)
+    {
+        FirstName = first;
+        LastName = last;
+        _phoneNumber = phone;
+    }
+    
+    // Properties
+    public string FullName => FirstName + " " + LastName;
+    
+    public int PhoneNumber
+    {
+        get
+        {
+            return _phoneNumber;
+        }
+        set
+        {
+            _phoneNumber = value;
+        }
+    }
+    
+    OR EQUIVALENTLY
+    
+    public int PhoneNumber { get; set;}
+    
+    // Methods
+    
+    public string Greet(string friend) => "Hello, " + friend;
+    
+    public string SayNo()
+    {
+        return "I don't think so.";
+    }
+}
+</code></pre>
+</div>
