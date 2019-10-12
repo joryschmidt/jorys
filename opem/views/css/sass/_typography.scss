@@ -1,0 +1,34 @@
+.btn {
+  font-size: 1.4rem;
+  padding: 1.5rem;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: $def-border-radius;
+  outline: none;
+  cursor: pointer;
+  
+  &:focus, &:active {
+    outline: none;
+  }
+}
+
+a:link, a:hover, a:visited, a:active {
+  text-decoration: none;
+  outline: none;
+  color: inherit;
+}
+
+.drop {
+  transform: translateY(7rem);
+}
+
+.darken {
+  background-color: darken($color-secondary, 10%);
+}
+
+// Chrome-specific styling
+input[type="date"]::-webkit-inner-spin-button { 
+  display: none; 
+}

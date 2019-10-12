@@ -1,0 +1,13 @@
+<svg id="Outline_2_" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #51606b;
+      }
+    </style>
+  </defs>
+  <g id="Group_144" data-name="Group 144">
+    <path id="Path_119" data-name="Path 119" class="cls-1" d="M10,0A10,10,0,1,0,20,10,10.029,10.029,0,0,0,10,0Zm0,18a8,8,0,1,1,8-8A8.024,8.024,0,0,1,10,18Z"/>
+    <path id="Path_120" data-name="Path 120" class="cls-1" d="M13.6,5,10,8.6,6.4,5,5,6.4,8.6,10,5,13.6,6.4,15,10,11.4,13.6,15,15,13.6,11.4,10,15,6.4Z"/>
+  </g>
+</svg>

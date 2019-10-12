@@ -1,0 +1,66 @@
+.home {
+  width: 50rem;
+  margin: 0 auto;
+  margin-top: 8rem;
+  
+  @include respond(mobile) {
+    width: 45rem;
+  }
+  
+  @include respond(tiny) {
+    width: 90%;
+  }
+  
+  &__search-bar {
+    
+    border-bottom: 1px solid $color-grey-dark;
+    margin-bottom: 3rem;
+    
+    &-icon {
+      height: 2.5rem;
+      width: 2.5rem;
+      fill: $color-grey;
+      transform: translateY(4px);
+      margin-right: 1rem;
+    }
+    
+    &-text {
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      color: $color-grey;
+    }
+  }
+  
+  &__btn {
+    text-align: center;
+    transition: background-color .2s;
+    
+    &--search {
+      background-color: $color-primary;
+      
+      &:hover {
+        background-color: darken($color-primary, 10%);
+      }
+    }
+    
+    &--host {
+      background-color: $color-secondary;
+      
+      &:hover {
+        background-color: darken($color-secondary, 10%);
+      }
+    }
+  }
+  
+  &--span {
+    color: $color-secondary;
+    display: block;
+    margin: 5rem 0;
+    font-size: 2rem;
+    text-align: center;
+  }
+}
+
+#end_time--button {
+  cursor: pointer;
+}

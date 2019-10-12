@@ -1,0 +1,148 @@
+.event-card {
+  display: block;
+  cursor: default;
+  position: relative;
+  
+  
+  // width: 30rem;
+  width: 100%;
+  border-radius: $def-border-radius;
+  box-shadow: var(--box-shadow);
+  padding-top: 2rem;
+  overflow: hidden;
+  
+  @include respond(mobile) {
+    box-shadow: none;
+    border-top: 1px solid $color-grey;
+    border-radius: 0;
+    margin-top: 2.5rem;
+    font-size: 2rem;
+    grid-template: 3.5fr 1fr / 2.5fr 1fr
+  }
+  
+  display: grid;
+  grid-template-rows: 20rem 9rem 6rem;
+  font-size: 1.8rem;
+  
+  &__heading {
+    display: flex;
+    width: 100%;
+    
+    &--text {
+      max-width: 80%;
+      font-size: 2.2rem;
+      text-transform: uppercase;
+      margin-left: 2rem;
+      color: $color-grey-dark;
+    }
+  }
+  
+  &__venue {
+    margin-left: 2rem;
+    color: $color-primary;
+    margin-bottom: 1rem;
+    max-width: 70%;
+    display: inline-block;
+    text-indent: 2rem hanging each-line;
+    
+    @include respond(mobile) {
+    }
+  }
+  
+  &__date {
+    margin-left: 2rem;
+    
+    @include respond(mobile) {
+      margin-bottom: 2rem;
+    }
+    
+    &--day {
+      
+    }
+    
+    &--calendar {
+      color: $color-grey-text;
+      margin-right: 4px;
+    }
+    
+    &--remaining {
+      color: $color-primary;
+    }
+    
+    &--time {
+      color: $color-grey-text;
+    }
+  }
+  
+  &__spots {
+    
+    @include respond(mobile) {
+      display: flex;
+      flex-direction: column;
+      width: 17rem;
+      height: 17rem;
+      padding: 0;
+      margin-top: 0;
+      line-height: 1.4;
+    }
+    
+    margin: 2rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $color-grey-light;
+    color: $color-grey-dark;
+    border-radius: $def-border-radius;
+    
+    &--number {
+      
+      @include respond(mobile) {
+        font-size: 2.8rem;
+        display: block;
+        margin: 0 1rem;
+      }
+    }
+  }
+  
+  &__view {
+    background-color: $color-primary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    @include respond(mobile) {
+      grid-area: 2 / 1 / 3 / 3;
+    }
+    
+    width: 100%;
+    text-transform: uppercase;
+    color: white !important;
+    height: 6rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease-out;
+    
+    &:hover {
+      background-color: lighten($color-primary, 5%);
+    }
+  }
+}
+
+.pencil-glyph {
+  
+  @include respond(mobile) {
+    display: none;
+  }
+  
+  transform: rotate(90deg);
+  position: absolute;
+  color: $color-grey-text;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  transition: color 0.2s ease-out;
+  
+  &:hover {
+    color: darken($color-grey-text, 15%);
+  }
+}

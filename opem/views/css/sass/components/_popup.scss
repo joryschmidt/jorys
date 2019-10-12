@@ -1,0 +1,315 @@
+.popup {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  
+  visibility: hidden;
+  opacity: 0;
+  
+  transition: all .3s;
+  background-color: rgba(0, 0, 0, 0.2);
+  
+  @include respond(switch) {
+    position: fixed;
+    z-index: 100;
+  }
+  
+  &__heading {
+    text-transform: uppercase;
+    color: $color-primary;
+    font-size: 3.2rem;
+    margin: 1.5rem auto 7rem;
+    display: block;
+    text-align: center;
+    
+    @include respond(laptop) {
+      margin: 1.5rem auto;
+    }
+    
+    @include respond(switch) {
+      font-size: 2.8rem;
+    }
+  }
+  
+  &__content {
+    width: 110rem;
+    position: absolute;
+    top: 8rem;
+    right: 20rem;
+    
+    background-color: white;
+    border-radius: $def-border-radius;
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    
+    @include respond(laptop) {
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 0;
+      box-shadow: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    
+    @include respond(tiny) {
+      // height: auto;
+    }
+  }
+  
+  &__form {
+    width: 75%;
+    margin: 0 auto;
+    
+    display: grid;
+    grid-template: repeat(4, 1fr) 2.5fr / 1.2fr 4fr;
+    grid-column-gap: 2.5rem;
+    grid-row-gap: 2.5rem;
+    
+    @include respond(switch) {
+      display: flex;
+      flex-direction: column;
+      width: 85%;
+      overflow-y: scroll;
+    }
+    
+    @include respond(mobile) {
+      width: 90%;
+    }
+    
+    &__label {
+      text-transform: uppercase;
+      font-size: 2rem;
+      text-align: right;
+      
+      @include respond(switch) {
+        text-align: left;
+      }
+      
+      @include respond(tiny) {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+      }
+    }
+    
+    &__input {
+      border: 1px solid $color-grey;
+      border-radius: $def-border-radius;
+      
+      &::placeholder {
+        font-size: 1.8rem;
+        
+        @include respond(switch) {
+          padding-left: 1rem;
+        }
+      }
+    }
+    
+    & > * {
+      padding: 1rem;
+      
+      @include respond(switch) {
+        margin: -1rem 0;
+        padding: 1.4rem;
+      }
+      
+      // @include respond(tiny) {
+      //   padding: .8rem;
+      // }
+    }
+    
+    &__group {
+      display: flex;
+      justify-content: space-between;
+      padding: 0;
+      
+      @include respond(switch) {
+        display: grid;
+        grid-template: 1fr 1fr / 1fr 1fr;
+        width: 85%;
+        height: 10rem;
+        grid-column-gap: 2rem;
+        grid-row-gap: 2rem;
+        margin-bottom: 3rem;
+      }
+      
+      &__container {
+        border: 1px solid $color-grey-dark;
+        border-radius: $def-border-radius;
+        width: 30%;
+        
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 1rem;
+        
+        @include respond(switch) {
+          width: 100%;
+          padding: 1rem;
+          border: none;
+        }
+        
+        &--window {
+          height: 5rem;
+          width: 40%;
+        }
+        
+        &--end {
+          background-color: $color-secondary;
+          
+          @include respond(switch) {
+            grid-area: 2 / 2 / 3 / 3;
+          }
+        }
+        
+        &__input {
+          border: none;
+          width: 80%;
+        }
+        
+        &__icon {
+          width: 2.5rem;
+          height: 2.5rem;
+          fill: $color-secondary;
+          margin-left: 1rem;
+          
+          &--plus {
+            fill: white;
+            transform: scale(0.9);
+          }
+        }
+        
+        &__span {
+          color: white;
+          text-transform: uppercase;
+          font-size: 1.8rem;
+          
+          @include respond(tablet) {
+            font-size: 1.6rem;
+          }
+        }
+      }
+      
+      &__window {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+        width: 80%;
+      }
+    }
+    
+    &__event-type {
+      display: grid;
+      grid-template: 4rem / repeat(3, 1fr);
+      align-items: center;
+    }
+    
+    &__sign-up-text {
+      color: $color-grey;
+    }
+  }
+  
+  &__form2 {
+    width: 75%;
+    margin: 0 auto;
+    
+    @include respond(tablet) {
+      width: 90%;
+    }
+    
+    @include respond(switch) {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+    }
+    
+    display: grid;
+    grid-template: repeat(4, 1fr) / 2fr 4fr;
+    grid-column-gap: 2.5rem;
+    grid-row-gap: 2.5rem;
+    align-items: center;
+    
+    & > * {
+      padding: 1rem;
+      
+      @include respond(switch) {
+        margin: .8rem;
+      }
+    }
+  }
+  
+  &__nav {
+    
+    width: 100%;
+    height: 8rem;
+    background-color: $color-primary;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 3.5rem;
+    padding: 0 3rem;
+    
+    @include respond(laptop) {
+      margin-top: 1rem;
+    }
+    
+    &__text {
+      text-transform: uppercase;
+      color: white;
+      font-size: 3rem;
+      height: 100%;
+      display: flex;
+      align-items: center
+    }
+    
+    &__icon {
+      fill: white;
+      width:  1.8rem;
+      height: 1.8rem;
+      margin: 0 1rem;
+    }
+  }
+  
+  
+  &__close {
+    
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    
+    @include respond(switch) {
+      top: 3rem;
+      left: 3rem;
+    }
+    
+    &__icon {
+      cursor: pointer;
+      width: 2.5rem;
+      height: 2.5rem;
+      fill: $color-secondary;
+    }
+  }
+  
+  &__spots > &__form__input {
+    padding: 1rem;
+    margin-right: 1rem;
+  }
+}
+
+.nav2 {
+  justify-content: space-between;
+}
+
+#description-textarea {
+  height: 15rem;
+}
+
+#end_time--element {
+  grid-area: 2 / 2 / 3 / 3;
+}

@@ -1,0 +1,114 @@
+.signup {
+  width: 50vw;
+  margin: 0 auto;
+  padding-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  overflow: auto;
+  
+  @include respond(login) {
+    width: 100%;
+  }
+  
+  
+  &__logo {
+    display: block;
+    height: 4rem;
+    fill: white;
+    margin: 0 auto;
+    margin-bottom: 8rem;
+    
+    @include respond(switch) {
+      margin-bottom: 5rem;
+    }
+    
+    @include respond(mobile) {
+      margin-bottom: 2rem;
+      margin-top: 1rem;
+      height: 5rem;
+    }
+  }
+  
+  &__heading {
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+    margin: 3rem 0;
+    letter-spacing: 1px;
+    cursor: default;
+    font-size: 2.5rem;
+    font-weight: 300;
+    
+    @include respond(mobile) {
+      font-size: 2.6rem;
+    }
+  }
+  
+  &__form {
+    display: flex;
+    flex-direction: column;
+    
+    
+    &-container {
+      width: 60rem;
+      margin: 0 auto;
+      background-color: white;
+      border-radius: $def-border-radius;
+      box-shadow: var(--box-shadow);
+      padding: 5rem 8rem;
+      
+      @include respond(login) {
+        width: 50%;
+      }
+      
+      @include respond(tablet) {
+        width: 62.5%;
+      }
+      
+      @include respond(switch) {
+        width: 75%;
+      }
+      
+      @include respond(mobile) {
+        width: 90%;
+        padding: 5rem;
+      }
+    }
+  }
+  
+  &__btn {
+    margin-bottom: 2rem;
+    background-color: $color-primary;
+    
+    @include respond(mobile) {
+      margin-bottom: 1rem;
+      font-size: 1.6rem;
+    }
+  }
+  
+  &__link {
+    margin-top: 2rem;
+    cursor: default;
+    font-size: 1.4rem;
+    color: $color-grey-light;
+    
+    
+    @include respond(switch) {
+      font-size: 1.6rem;
+    }
+    
+    @include respond(mobile) {
+      font-size: 2rem;
+      margin: 2rem;
+    }
+  }
+  
+  &__input {
+    @include respond(mobile) {
+      font-size: 1.6rem;
+      padding: 1.8rem;
+    }
+  }
+}

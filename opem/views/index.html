@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+      
+      <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet"> 
+      <link rel="stylesheet" href="vendor/awesomplete/awesomplete.css">
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      
+      <title>Open MIC</title>
+    </head>
+    
+    <body ng-app="opem">
+      <div class="container">
+        <div class="main-view">
+          <nav class="nav">
+            <div class="logo-container">
+              <a href="/opem/"><svg class="logo"><use xlink:href="img/sprite.svg#logo"></use></svg></a>
+            </div>
+            <div class="user-menu">
+              <div class="user-menu--large">
+                <div class="user-menu__photo-container"><img class='user-menu__photo' id="user-photo" alt="User photo"></div>
+                <div class="user-menu__name" id="user-name"></div>
+                <svg class="user-menu__caret"><use xlink:href="img/sprite.svg#downward-carrot"></use></svg>
+              </div>
+              <div class="user-menu--mobile">
+                <span class="user-menu--mobile__icon"></span>
+              </div>
+            </div>
+          </nav>
+          <div class="dropdown">
+            <a class="dropdown-item" href="/opem/logout">Logout</a>
+          </div>
+          
+          <div class="content">
+            <div class="sidebar">
+              <a href="#!/dashboard" class="sidebar__item sidebar__active">
+                <svg class="sidebar__icon"><use xlink:href="img/sprite.svg#home"></use></svg>
+                <span class="sidebar__text">Home</span>
+              </a>
+              <a href="#!/dashboard" class="sidebar__item">
+                <svg class="sidebar__icon"><use xlink:href="img/sprite.svg#near-me"></use></svg>
+                <span class="sidebar__text">Events Near Me</span>
+              </a>
+              <a href="#!/dashboard" class="sidebar__item">
+                <div class="sidebar__icon-container">
+                  <svg class="sidebar__icon"><use xlink:href="img/sprite.svg#my-open-mics"></use></svg>
+                  <div class="sidebar__icon--notification" id="my-open-mics-notification"></div>
+                </div>
+                <span class="sidebar__text">My Open Mics</span>
+              </a>
+              <a href="#!/hosted" class="sidebar__item">
+                <div class="sidebar__icon-container">
+                  <svg class="sidebar__icon"><use xlink:href="img/sprite.svg#hosted-by-me"></use></svg>
+                  <div class="sidebar__icon--notification" id="hosted-notification"></div>
+                </div>
+                <span class="sidebar__text">Hosted By Me</span>
+              </a>
+            </div>
+          
+            <div class="content__main">
+              <div ng-view></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <script src="vendor/awesomplete/awesomplete.min.js"></script>
+      <script src="bower_components/jquery/dist/jquery.min.js"></script>
+      <script src="bower_components/axios/dist/axios.min.js"></script>
+      <script src="bower_components/angular/angular.min.js"></script>
+      <script src="bower_components/angular-route/angular-route.min.js"></script>
+      
+      <script src="app.js"></script>
+      <script src="controllers/home.controller.js"></script>
+      <script src="controllers/login.controller.js"></script>
+      <script src="controllers/hosted.controller.js"></script>
+      <script src="controllers/results.controller.js"></script>
+      <script src="controllers/event.controller.js"></script>
+      
+      <script src="js/index.js"></script>
+    </body>
+</html>

@@ -1,0 +1,40 @@
+<div class="home">
+  <div class="home__search-bar">
+    <svg class="home__search-bar-icon"><use xlink:href="img/sprite.svg#search"></use></svg>
+    <input type="text" name="search--venue" class="awesomplete  search-bar search-bar--venue" id="search--venue" placeholder="Search for event" ng-model="search_name" />
+  </div>
+  <div class="btn home__btn home__btn--search" ng-click="eventSearch()" id="search-event-button">Search</div>
+  <span class="home--span">or</span>
+  <div class="btn home__btn home__btn--host" id="host-event">Host An Event</div>
+</div>
+
+<popup></popup>
+
+<!--Allows popup to show-->
+<script type="text/javascript">
+  $('#host-event').on('click', function() { $('#popup1').css({ visibility: 'visible', opacity: 1 }); });
+</script>
+
+<!--This script makes the search bar work-->
+<script type="text/javascript">
+  var inp = document.getElementById('search--venue');
+  var awesomplete = new Awesomplete(inp);
+  
+  // populate autocomplete dropdown with array of venue names from database
+  axios.get('/opem/event/all').then(function(response) {
+    awesomplete.list = response.data.map(event => event.name);
+  }).catch(function(err) {
+    console.log(err);
+  });
+</script>
+
+<!--this script allows user to hit enter when focused on search bar to submit-->
+<!--it's not updating ng-model when awesomplete does with this script on, so i'll hve to fix that before implementation-->
+
+<!--<script type="text/javascript">-->
+<!--  $('#search--venue').keypress(function(e) {-->
+<!--    if (e.which == 13) {-->
+<!--      $('#search-event-button').click();-->
+<!--    }-->
+<!--  });-->
+<!--</script>-->

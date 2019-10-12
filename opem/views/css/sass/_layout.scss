@@ -1,0 +1,282 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  background-color: $color-primary;
+}
+
+.main-view {
+  background-color: white;
+  height: 100%;
+  position: relative;
+}
+
+.content {
+  // set the height to the height of parent element less height of navbar
+  height: calc(100% - 7rem);
+  display: flex;
+  position: relative;
+  
+  @include respond(tablet) {
+    flex-direction: column;
+  }
+  
+  &__main {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    
+    @include respond(tiny) {
+      // This prevents the html element from collapsing at very small screen sizes, when the popup gets too big for its britches
+      overflow: auto;
+    }
+  }
+}
+
+.nav {
+  height: 7rem;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1.5rem;
+  padding-right: 0;
+  background-color: $color-secondary;
+  
+  position: relative;
+  z-index: 10;
+  
+  .logo {
+    height: 4rem;
+    width: 15rem;
+    fill: $color-grey-light;
+    transform: translateY(4px);
+    
+    @include respond(switch) {
+      height: 3rem;
+      width: 12rem;
+    }
+    
+    &-container {
+      height: 7rem;
+      transition: all .2s;
+      margin-top: -1.5rem;
+      display: flex;
+      align-items: center;
+      padding: 0 1.5rem;
+      
+      &:hover {
+        background-color: darken($color-secondary, 10%);
+      }
+    }
+  }
+  
+  .user-menu {
+    height: 7rem;
+    margin-top: -1.5rem;
+    cursor: pointer;
+    transition: background-color .2s;
+    
+    &--large {
+      display: flex;
+      padding-top: 1rem;
+      
+      @include respond(switch) {
+        display: none;
+      }
+    }
+    
+    &--mobile {
+      display: none;
+      height: 100%;
+      width: 7rem;
+      
+      &__icon {
+        position: relative;
+        
+        &, &::after, &::before {
+          height: 2px;
+          width: 2.5rem;
+          background-color: $color-grey-light;
+        }
+        
+        &::before, &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+        }
+        
+        &::before {
+          top: -.6rem;
+        }
+        
+        &::after {
+          top: .7rem;
+          
+          @include respond(mobile) {
+            top: .6rem;
+          }
+        }
+      }
+      
+      @include respond(switch) {
+        display: flex;
+        align-items: center;
+        justify-content: center
+      }
+    }
+    
+    &__photo {
+      height: 5rem;
+      border-radius: 20rem;
+      
+      &-container {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        margin: 0 1.5rem;
+      }
+    }
+    
+    &__name {
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+      color: $color-grey-light;
+      font-size: 1.4rem;
+      margin-right: 1rem;
+    }
+    
+    &__caret {
+      align-self: center;
+      fill: white;
+      height: .7rem;
+      width: 1.4rem;
+      margin-right: 1.5rem;
+    }
+    
+    &:hover {
+      background-color: darken($color-secondary, 10%);
+    }
+  }
+}
+
+.dropdown {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 5;
+  transition: all .2s;
+  
+  &:hover {
+    transform: translateY(7rem);
+  }
+  
+  &-item {
+    height: 5rem;
+    width: 12rem;
+    padding: 1rem;
+    color: white !important; 
+    background-color: $color-secondary;
+    transition: background-color .2s;
+    text-align: right;
+    cursor: pointer;
+    
+    border-bottom: 1px solid $color-grey-dark;
+    
+    &:hover {
+      background-color: darken($color-secondary, 10%);
+    }
+  }
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  background-color: $color-grey-light;
+  width: 30rem;
+  height: 100%;
+  
+  @include respond(tablet) {
+    height: auto;
+    width: 100%;
+    display: grid;
+    grid-template: 6rem / repeat(4, 1fr);
+    grid-column-gap: .2rem;
+    
+    background-color: white;
+  }
+  
+  @include respond(switch) {
+    grid-template-rows: 8rem;
+  }
+  
+  &__item {
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    transition: all .2s;
+    position: relative;
+    
+    @include respond(tablet) {
+      background-color: $color-grey-light;
+    }
+    
+    @include respond(switch) {
+      flex-direction: column;
+      justify-content: center;
+      padding: 1rem;
+    }
+    
+    &:hover {
+      background-color: $color-grey;
+    }
+  }
+  
+  &__icon {
+    height: 2.5rem;
+    width: 2.5rem;
+    fill: $color-secondary;
+    
+    &--notification {
+      width: 1.8rem;
+      height: 1.8rem;
+      position: absolute;
+      top: -.7rem;
+      right: -.2rem;
+      
+      display: none;
+      justify-content: center;
+      align-items: center;
+      
+      background-color: $color-primary;
+      border-radius: 10rem;
+      color: white;
+      font-size: 1.2rem;
+      
+    }
+    
+    &-container {
+      position: relative;
+    }
+  }
+  
+  &__text {
+    font-size: 1.4rem;
+    margin-left: 2rem;
+    color: $color-secondary;
+    
+    @include respond(switch) {
+      margin-left: 0;
+      margin-top: .5rem;
+    }
+    
+    @include respond(tiny) {
+      display: none;
+    }
+  }
+  
+  &__active {
+    background-color: $color-grey;
+  }
+}

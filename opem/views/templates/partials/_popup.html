@@ -1,0 +1,135 @@
+<div class="popup" id="popup1">
+  <div class="popup__content">
+    <span class="popup__heading">Host an event</span>
+    <form class="popup__form">
+      
+      <span class="popup__form__label">Event name</span>
+        <input class="popup__form__input" type="text" name="name" placeholder="Name of event" ng-model="event.name" />
+        
+      <span class="popup__form__label">Venue</span>
+        <input class="popup__form__input" type="text" name="venue" placeholder="Venue name" ng-model="event.venue" />
+        
+      <span class="popup__form__label">Address</span>
+        <input class="popup__form__input" type="text" name="address" placeholder="e.g. 100 N High St, Columbus, OH, 43202" ng-model="event.address" />
+        
+      <span class="popup__form__label">Date/Time</span>
+        <div class="popup__form__group">
+          
+          <div class="popup__form__group__container">
+            <input class="popup__form__group__container__input" type="date" name="date" ng-model="event.date" />
+            <svg class="popup__form__group__container__icon"><use xlink:href="img/sprite.svg#calender"></use></svg>
+          </div>
+          
+          <div class="popup__form__group__container">
+            <input class="popup__form__group__container__input" type="time" name="time_start" ng-model="event.time_start" />
+            <svg class="popup__form__group__container__icon"><use xlink:href="img/sprite.svg#time"></use></svg>
+          </div>
+          
+          <div class="popup__form__group__container popup__form__group__container--end" id="end_time--button">
+            <svg class="popup__form__group__container__icon popup__form__group__container__icon--plus"><use xlink:href="img/sprite.svg#plus"></use></svg>
+            <span class="popup__form__group__container__span" id="end_time">End Time</span>
+          </div>
+          
+          <div class="popup__form__group__container" id="end_time--element" style="display: none;">
+            <input class="popup__form__group__container__input" type="time" name="time_end" ng-model="event.time_end" />
+            <svg class="popup__form__group__container__icon"><use xlink:href="img/sprite.svg#time"></use></svg>
+          </div>
+        </div>
+        
+      <span class="popup__form__label">Description</span>
+        <textarea class="popup__form__input" type="text" name="description" placeholder="Short description of event" ng-model="event.description" id="description-textarea"></textarea>
+    </form>
+    
+    <div class="popup__nav">
+      <span class="popup__nav__text" id="popup-next">Next <svg class="popup__nav__icon"><use xlink:href="img/sprite.svg#carrot"></use></svg></span>
+    </div>
+    
+    <div class="popup__close"><svg class="popup__close__icon"><use xlink:href="img/sprite.svg#close"></use></svg></div>
+  </div>
+</div>
+
+<div class="popup" id="popup2">
+  <div class="popup__content">
+    <span class="popup__heading">Host an event</span>
+    <form class="popup__form2" ng-submit="submit()">
+      
+      <span class="popup__form__label">Number of spots</span>
+        <div class="popup__spots">
+          <input class="popup__form__input" type="text" name="spots" placeholder="Add Number" ng-model="event.spots" />
+          
+          <input type="checkbox" name="allow" id="allow" class="popup__form__checkbox checkbox" ng-model="event.requestable" />
+            <label for="allow" class="checkbox__label"><span class="checkbox__box"></span><span class="checkbox__text">Allow spot requests</span></label>
+        </div>
+        
+      <span class="popup__form__label">Event type</span>
+        <div class="popup__form__event-type">
+          <div class="popup__form__checkbox__container">
+            <input type="checkbox" name="comedy" id="comedy" class="popup__form__checkbox checkbox" ng-model="event.event_type.comedy">
+              <label for="comedy" class="checkbox__label"><span class="checkbox__box"></span><span class="checkbox__text">Comedy</span></label>
+          </div>
+              
+          <div class="popup__form__checkbox__container">
+            <input type="checkbox" name="music" id="music" class="popup__form__checkbox checkbox" ng-model="event.event_type.music">
+              <label for="music" class="checkbox__label"><span class="checkbox__box"></span><span class="checkbox__text">Music</span></label>
+          </div>
+              
+          <div class="popup__form__checkbox__container">
+            <input type="checkbox" name="other" id="other" class="popup__form__checkbox checkbox" ng-model="event.event_type.other">
+              <label for="other" class="checkbox__label"><span class="checkbox__box"></span><span class="checkbox__text">Other</span></label>
+          </div>
+        </div>
+        
+        <span class="popup__form__label">Sign Up Window</span>
+        <div class="popup__form__group__window">
+          
+          <div class="popup__form__group__container popup__form__group__container--window">
+            <input class="popup__form__group__container__input" type="time" ng-model="event.signup_start" />
+            <svg class="popup__form__group__container__icon"><use xlink:href="img/sprite.svg#time"></use></svg>
+          </div>
+          
+          <span class="popup__form__sign-up-text">to</span>
+          
+          <div class="popup__form__group__container popup__form__group__container--window">
+            <input class="popup__form__group__container__input" type="time" ng-model="event.signup_end" />
+            <svg class="popup__form__group__container__icon"><use xlink:href="img/sprite.svg#time"></use></svg>
+          </div>
+        </div>
+        
+        <span class="popup__form__label">Recurring Event</span>
+        <div class="popup__form__checkbox__container">
+          <input type="checkbox" name="recurring" id="recurring" class="popup__form__checkbox checkbox" ng-model="event.recurring">
+            <label for="recurring" class="checkbox__label"><span class="checkbox__box"></span><span class="checkbox__text">Event Repeats</span></label>
+        </div>
+    </form>
+    
+    
+    <div class="popup__nav nav2">
+      <span class="popup__nav__text" id="popup-prev"><svg class="popup__nav__icon"><use xlink:href="img/sprite.svg#carrot-back"></use></svg> Previous</span>
+      <span class="popup__nav__text" id="popup-save" ng-click="submit()">Save</span>
+    </div>
+    
+    <div class="popup__close"><svg class="popup__close__icon"><use xlink:href="img/sprite.svg#close"></use></svg></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $('#popup-next').on('click', function() {
+    $('#popup1').css({ visibility: 'hidden', opacity: 0 });
+    $('#popup2').css({ visibility: 'visible', opacity: 1 });
+  });
+  
+  $('#popup-prev').on('click', function() {
+    $('#popup2').css({ visibility: 'hidden', opacity: 0 });
+    $('#popup1').css({ visibility: 'visible', opacity: 1 });
+  });
+  
+  $('.popup__close__icon').on('click', function() {
+    $('#popup1').css({ visibility: 'hidden', opacity: 0 });
+    $('#popup2').css({ visibility: 'hidden', opacity: 0 });
+  });
+  
+  $('#end_time--button').on('click', function() {
+    $('#end_time--button').css('display', 'none');
+    $('#end_time--element').css('display', 'flex');
+  });
+</script>

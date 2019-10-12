@@ -1,0 +1,17 @@
+<div class="event-card">
+  <div class="event-card--info">
+    <div class="event-card__heading"><span class="event-card__heading--text">{{ event.name }}</span><div class="pencil-glyph">&#9998;</div></div>
+    <span class="event-card__venue">At <span class="venue--name">{{ event.venue }}</span></span>
+    <div class="event-card__date">
+      <div class="event-card--day">
+        <span class="event-card__date--calendar">{{ event.calendar }}</span>
+        <span class="event-card__date--remaining" ng-show="event.remaining">{{ event.remaining }} days</span>
+      </div>
+      
+      <span class="event-card__date--time">{{ event.start }} <span class="event-card__time--end" ng-show="event.time_end">- {{ event.end }}</span></span>
+    </div>
+  </div>
+  
+  <div class="event-card__spots"><span class="event-card__spots--number">{{ event.spots_left }}</span>&nbsp;of&nbsp;<span class="event-card__spots--number">{{ event.spots }}</span>&nbsp;remaining</div>
+  <a class="event-card__view" ng-href='#!/event/{{ event._id }}'>View</a>
+</div>

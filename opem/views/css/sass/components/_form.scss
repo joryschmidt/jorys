@@ -1,0 +1,26 @@
+.form {
+  &__input {
+    padding: 1.5rem;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    border: 2px solid $color-grey;
+    border-radius: $def-border-radius;
+    margin: 1rem 0;
+    transition: all .2s;
+    
+    &:focus {
+      background-color: $color-grey-light;
+    }
+    
+    // placeholder text is different between chrome and firefox, not complete
+    color: $color-grey-dark;
+    
+    &::placeholder {
+      text-transform: uppercase;
+    }
+    
+    &::-moz-placeholder {
+      color: $color-grey-dark;
+    }
+  }
+}

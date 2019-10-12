@@ -1,0 +1,32 @@
+{
+  "name": "openmic",
+  "version": "1.0.0",
+  "description": "an app for open miccers",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "Jory Schmidt",
+  "license": "ISC",
+  "engines": {
+    "node": "4.7.3"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.17.2",
+    "client-sessions": "^0.8.0",
+    "express": "^4.15.3",
+    "md5": "^2.2.1",
+    "mongoose": "^4.10.4",
+    "morgan": "^1.9.1",
+    "node-sass-middleware": "^0.11.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "jasmine": "^3.1.0",
+    "jasmine-core": "^3.1.0",
+    "jasmine-expect": "^3.8.3"
+  }
+}

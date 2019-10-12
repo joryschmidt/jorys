@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet"> 
+      <link rel="stylesheet" href="css/style.css">
+      
+      <title>Open MIC</title>
+    </head>
+    <body>
+      
+      <div class="container">
+        
+        <div class="signup">
+          <div class="signup__logo-container">
+            <svg class="signup__logo"><use xlink:href="img/sprite.svg#logo"></use></svg>
+          </div>
+          
+          <div class="signup__heading">Welcome to Opem</div>
+          
+          <div class="signup__form-container">
+            <form class="form signup__form" action="/opem/signup" method="post">
+              <input type="text" class="form__input signup__input" placeholder="Username" name="username" autofocus />
+              <input type="email" class="form__input signup__input" placeholder="Email address" name="email" />
+              <input type="password" class="form__input signup__input" placeholder="Password" name="password" />
+              <input type="submit" style="visibility: hidden;" id="submit" />
+              <button class="btn signup__btn" id="submit-button">Sign up</button>
+            </form>
+          </div>
+          
+          <span class="signup__link"><a class='signup__links-link' href='/opem/login'>Already have an account?</a></span>
+        </div>
+      </div>
+      
+      <script type="text/javascript">
+        $('#submit-button').click(function() {
+          $('#submit').click();
+        });
+      </script>
+    </body>
+</html>

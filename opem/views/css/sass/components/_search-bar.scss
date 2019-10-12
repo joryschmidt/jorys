@@ -1,0 +1,55 @@
+$grey: darken($color-grey, 15%);
+
+.search-bar {
+  outline: none;
+  border: none;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color: $grey;
+  width: 150%;
+  
+  &::placeholder {
+    color: $grey;
+  }
+  
+  &--venue {
+    
+  }
+}
+
+.awesomplete {
+  
+  & ul {
+    
+  }
+  
+  & li {
+    color: $grey;
+    text-transform: uppercase;
+    
+    &:hover {
+      
+      color: white !important;
+      background-color: $color-primary !important;
+      
+      & mark {
+        background: none;
+        color: white;
+      }
+    }
+  }
+  
+  & mark {
+    color: $grey;
+    background: none;
+    
+  }
+  
+  & li[aria-selected="true"] mark {
+    background: none;
+  }
+  
+  & > ul > li[aria-selected="true"] {
+    background-color: $color-primary;
+  }
+}

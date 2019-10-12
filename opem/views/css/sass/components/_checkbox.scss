@@ -1,0 +1,27 @@
+.checkbox {
+  display: none;
+  
+  &__label {
+    
+  }
+  
+  &__box {
+    display: inline-block;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 1px solid $color-grey;
+    border-radius: $def-border-radius;
+    transform: translateY(.6rem);
+    margin-right: 1rem;
+    transition: background-color .1s ease-out;
+    cursor: pointer;
+  }
+  
+  &__text {
+    
+  }
+  
+  &:checked ~ &__label > &__box {
+    background-color: $color-grey;
+  }
+}

@@ -1,0 +1,56 @@
+$color-primary: #20bf6b;
+$color-secondary: #51606b;
+
+$color-grey: #dedede;
+$color-grey-text: #b3b3b3;
+$color-grey-light: #ebebeb;
+$color-grey-dark: #6b6b6b;
+
+$def-border-radius: 4px;
+
+:root {
+  --box-shadow: 0 .3rem .7rem rgba(0, 0, 0, 0.4);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  
+  @include respond(switch) {
+    font-size: 56.25%;
+  }
+  
+  @include respond(mobile) {
+    font-size: 50%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  
+  // Global text properties here
+  font-size: 1.6rem;
+  font-family: 'Lato', sans-serif;
+  line-height: 1.7;
+}
+
+input, textarea {
+  font-size: 1.6rem;
+  font-family: 'Lato', sans-serif;
+  line-height: 1.7;
+}
+
+::selection {
+  background-color: $color-primary;
+  color: white;
+}
+
+::-moz-selection {
+  background-color: $color-primary;
+  color: white;
+}
