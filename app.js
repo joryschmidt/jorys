@@ -4,9 +4,9 @@ var morgan = require('morgan');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var bluebird = require('bluebird');
-var sass = require('node-sass-middleware');
 var sessions = require('client-sessions');
 
+// Database connection
 
 var db = 'mongodb://' + process.env.IP + '/default';
 
@@ -16,9 +16,10 @@ mongoose.connect(process.env.MONGODB_URI || db, { useNewUrlParser: true, useUnif
 var app = express();
 
 // Middleware for session functionality, and req.body
+
 app.use(sessions({
   cookieName: 'session',
-  secret: process.env.OPENMIC_SESSION,
+  secret: process.env.JORYS_SESSION,
   duration: 8 * 60 * 60 * 1000,
   activeDuration: 20 * 60 * 1000
 }));
@@ -28,7 +29,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 
 
+
 // Skillsquire Routes
+
+
 
 var skillsquire_main = require('./routes/skillsquire/main');
 var skillsquire_admin = require('./routes/skillsquire/admin');
@@ -36,14 +40,14 @@ var skillsquire_resource = require('./routes/skillsquire/resource');
 var skillsquire_user = require('./routes/skillsquire/user');
 
 
-app.use('/skillsquire', express.static(path.join(__dirname, 'skillsquire', 'views')));
 app.use('/skillsquire/admin', requireAdmin, express.static(path.join(__dirname, 'skillsquire', 'views/admin_views')));
 app.use('/skillsquire/syntax', express.static(path.join(__dirname, 'skillsquire', 'views/syntax')));
+app.use('/skillsquire', express.static(path.join(__dirname, 'skillsquire', 'views')));
 
 app.use('/skillsquire/admin', requireAdmin, skillsquire_admin);
 app.use('/skillsquire/resource', skillsquire_resource);
 app.use('/skillsquire/user', requireLogin, skillsquire_user);
-app.use('/skillsquire', skillsquire_main);
+app.use('/skillsquire/', skillsquire_main);
 
 
 
@@ -67,12 +71,15 @@ app.use('/opem/event', requireLogin, opem_event);
 app.use('/opem/', opem_main);
 
 
+
 // MAIN ROUTE
+
 
 app.use('/', express.static('./'));
 
 
 var port = process.env.PORT;
+
 app.listen(port, function() {
   console.log('App listening on port', port);
 });
