@@ -123,7 +123,11 @@ exports.guestSignUp = function(req, res) {
 
 // search for events by name and location. Just add documents to the array to search for other parameters (like VENUE)
 exports.eventSearchName = function(req, res) {
-  if (!req.body.name) res.status(404);
-  var rgx = new RegExp(req.body.name, 'i');
-  Event.find({ $or: [{ name: rgx }, { venue: rgx }] }, handler(res, "Internal server error"));
+  // if (!req.body.name) res.status(404);
+  if (!req.body.name) {
+    Event.find({}).exec(handler(res, "There aren't any events in the database"));
+  } else {
+    var rgx = new RegExp(req.body.name, 'i');
+    Event.find({ $or: [{ name: rgx }, { venue: rgx }] }, handler(res, "Internal server error"));
+  }
 };

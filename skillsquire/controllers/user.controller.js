@@ -56,7 +56,7 @@ exports.login = function(req, res, next) {
 
 // Logout the logged in user
 exports.logout = function(req, res) {
-  req.session.reset();
+  delete req.session.user;
   console.log('Logged out');
   res.redirect('/');
 };

@@ -47,7 +47,7 @@ exports.login = function(req, res, next) {
       next();
     } else if (bcrypt.compareSync(req.body.password, user.password)) {
       delete user.password;
-      req.session.user = user;
+      req.session.opem_user = user;
       console.log('Login successful');
       res.redirect('/opem/#!/dashboard');
       next();
@@ -60,21 +60,22 @@ exports.login = function(req, res, next) {
 
 // Logout the logged in user
 exports.logout = function(req, res) {
-  req.session.reset();
+  delete req.session.opem_user;
   console.log('Logged out');
-  res.redirect('/opem/login');
+  res.redirect('/');
 };
 
 // Get a JSON object representing the logged in user
 exports.getUser = function(req, res) {
-  var user = req.session.user;
+  console.table(req.session);
+  var user = req.session.opem_user;
   if (user) res.json(user);
   else res.status(404).json(null);
 };
 
 // This one is for getting the user in her current state from the database
 exports.getCurrentUser = function(req, res) {
-  User.findOne({ _id: req.session.user._id }, function(err, user) {
+  User.findOne({ _id: req.session.opem_user._id }, function(err, user) {
     if (err) {
       console.log(err);
       res.status(500).send("The user couldn't be found");

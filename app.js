@@ -66,8 +66,8 @@ app.use('/opem/signup', express.static(path.join(__dirname, 'opem', 'static', 's
 app.use('/opem', express.static(path.join(__dirname, 'opem', 'views')));
 
 // app.use('/admin', requireAdmin, admin);
-app.use('/opem/user', requireLogin, opem_user);
-app.use('/opem/event', requireLogin, opem_event);
+app.use('/opem/user', requireOpemLogin, opem_user);
+app.use('/opem/event', requireOpemLogin, opem_event);
 app.use('/opem/', opem_main);
 
 
@@ -95,5 +95,10 @@ function requireAdmin(req, res, next) {
 
 function requireLogin(req, res, next) {
   if (req.session.user) next();
+  else res.status(404).json(null);
+}
+
+function requireOpemLogin(req, res, next) {
+  if (req.session.opem_user) next();
   else res.status(404).json(null);
 }
