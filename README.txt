@@ -1,4 +1,4 @@
-# My portfolio Site
+# My Portfolio Site
 
 ## Design by
 
