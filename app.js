@@ -8,10 +8,16 @@ var sessions = require('client-sessions');
 
 // Database connection
 
-var db = 'mongodb://' + process.env.IP + '/default';
+var host = process.env.IP || '0.0.0.0';
+var db = `mongodb://${ host }/default`;
+
+var mongoose_options = { 
+  useNewUrlParser: true, 
+  useUnifiedTopology: true
+};
 
 mongoose.Promise = bluebird;
-mongoose.connect(process.env.MONGODB_URI || db, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.MONGODB_URI || db, mongoose_options);
 
 var app = express();
 
@@ -56,7 +62,7 @@ app.use('/skillsquire/', skillsquire_main);
 
 
 var opem_main = require('./routes/opem/main');
-var opem_admin = require('./routes/opem/admin');
+//var opem_admin = require('./routes/opem/admin');
 var opem_user = require('./routes/opem/user');
 var opem_event = require('./routes/opem/event');
 
@@ -78,7 +84,7 @@ app.use('/opem/', opem_main);
 app.use('/', express.static('./'));
 
 
-var port = process.env.PORT;
+var port = process.env.PORT || 443;
 
 app.listen(port, function() {
   console.log('App listening on port', port);
