@@ -81,7 +81,7 @@ app.use('/opem/', opem_main);
 // MAIN ROUTE
 
 
-app.use('/', express.static('./'));
+app.use('/', express.static(__dirname));
 
 
 var port = process.env.PORT || 443;
