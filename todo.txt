@@ -1,0 +1,7 @@
+Figure out how to make lightsail instance serve https
+
+fix opem date and time creation for events (use luxon)
+hide opem body for a second to stop the flash of the angular homepage before it renders login
+
+change the way ratings in skillsquire work and actually use the power of the database please
+find a decent design template for the skillsquire resource detail page

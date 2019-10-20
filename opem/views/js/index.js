@@ -1,5 +1,7 @@
 $(document).ready(function() {
   
+  // let's hide the whole document for a second when it's loaded
+  
   // makes navbar dropdown
   $('.user-menu').on('mouseenter', function() { $('.dropdown').addClass('drop'); });
   $('.dropdown').on('mouseenter', function() { $('.user-menu').addClass('darken'); });
