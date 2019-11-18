@@ -1,6 +1,10 @@
 $(document).ready(function() {
   
   // let's hide the whole document for a second when it's loaded
+  // setTimeout(function() {
+  //   $('body').css('visibility', 'visible');
+  // }, 500);
+  $('body').fadeIn('slow');
   
   // makes navbar dropdown
   $('.user-menu').on('mouseenter', function() { $('.dropdown').addClass('drop'); });
