@@ -1,6 +1,8 @@
-# My Portfolio Site
+# Portfolio
 
-## Design by
+## Features a couple of MEAN stack apps and some landing pages, and contact info
+
+### Design by
 
 Forty by HTML5 UP
 html5up.net | @ajlkn
