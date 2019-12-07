@@ -118,20 +118,18 @@
   });
   
   // redirects user to dashboard if logged in, to the login page otherwise
-  app.controller('redirect', ['$http', function($http) {
-    $http.get('/opem/user').then(function() {
-      window.location.href = '/opem/#!/dashboard'
-    }, function() {
-      window.location.href = '/opem/login';
-    });
-  }]);
-  
-  // app.run(['$http', function($http) {
-  //   $http.get('/user').then(function(user) {
-      
+  // app.controller('redirect', ['$http', function($http) {
+  //   $http.get('/opem/user').then(function() {
+  //     window.location.href = '/opem/#!/dashboard'
   //   }, function() {
-  //     window.location.href = '/login';
+  //     window.location.href = '/opem/login';
   //   });
   // }]);
+  
+  app.run(['$http', function($http) {
+    $http.get('/opem/user').then(function(user) {
+      console.log('User is logged in');
+    });
+  }]);
   
 })();

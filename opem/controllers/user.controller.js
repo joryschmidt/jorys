@@ -66,16 +66,14 @@ exports.logout = function(req, res) {
 };
 
 // Get a JSON object representing the logged in user
+// exports.getUser = function(req, res) {
+//   console.table(req.session);
+//   var user = req.session.opem_user;
+//   if (user) res.json(user);
+//   else res.status(404).json(null);
+// };
 exports.getUser = function(req, res) {
-  console.table(req.session);
-  var user = req.session.opem_user;
-  if (user) res.json(user);
-  else res.status(404).json(null);
-};
-
-// This one is for getting the user in her current state from the database
-exports.getCurrentUser = function(req, res) {
-  User.findOne({ _id: req.session.opem_user._id }, function(err, user) {
+  User.findOne({ username: 'user' }, function(err, user) {
     if (err) {
       console.log(err);
       res.status(500).send("The user couldn't be found");
@@ -84,7 +82,31 @@ exports.getCurrentUser = function(req, res) {
       res.json(user);
     }
   });
-};
+}
+
+// This one is for getting the user in her current state from the database
+// exports.getCurrentUser = function(req, res) {
+//   User.findOne({ _id: req.session.opem_user._id }, function(err, user) {
+//     if (err) {
+//       console.log(err);
+//       res.status(500).send("The user couldn't be found");
+//     } else {
+//       delete user.password;
+//       res.json(user);
+//     }
+//   });
+// };
+exports.getCurrentUser = function(req, res) {
+  User.findOne({ username: 'user' }, function(err, user) {
+    if (err) {
+      console.log(err);
+      res.status(500).send("The user couldn't be found");
+    } else {
+      delete user.password;
+      res.json(user);
+    }
+  });
+}
 
 // Delete a user from the database
 exports.deleteUser = function(req, res) {
