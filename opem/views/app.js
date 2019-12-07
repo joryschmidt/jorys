@@ -5,7 +5,7 @@
     $routeProvider
       .when('/', {
         template: '',
-        controller: 'redirect'
+        redirectTo: '/dashboard'
       })
       .when('/dashboard', {
         templateUrl: 'templates/home.html',
