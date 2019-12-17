@@ -5,6 +5,10 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var bluebird = require('bluebird');
 var sessions = require('client-sessions');
+var http = require('http');
+var https = require('https');
+var fs = require('fs');
+var forceSSL = require('express-force-ssl');
 require('dotenv').config();
 
 // Database connection
@@ -63,7 +67,6 @@ app.use('/skillsquire/', skillsquire_main);
 
 
 var opem_main = require('./routes/opem/main');
-//var opem_admin = require('./routes/opem/admin');
 var opem_user = require('./routes/opem/user');
 var opem_event = require('./routes/opem/event');
 
@@ -72,7 +75,6 @@ app.use('/opem/login', express.static(path.join(__dirname, 'opem', 'static', 'lo
 app.use('/opem/signup', express.static(path.join(__dirname, 'opem', 'static', 'signup.html')));
 app.use('/opem', express.static(path.join(__dirname, 'opem', 'views')));
 
-// app.use('/admin', requireAdmin, admin);
 app.use('/opem/user', opem_user);
 app.use('/opem/event', opem_event);
 app.use('/opem/', opem_main);
@@ -84,12 +86,27 @@ app.use('/opem/', opem_main);
 
 app.use('/', express.static(__dirname));
 
-
-var port = process.env.PORT || 80;
+// DEV SERVER
+var port = process.env.PORT || 8080;
 
 app.listen(port, function() {
   console.log('App listening on port', port);
 });
+
+// PROD SERVER
+// var key = fs.readFileSync('/etc/letsencrypt/archive/jorys.io/privkey1.pem').toString(); 
+// var cert = fs.readFileSync('/etc/letsencrypt/archive/jorys.io/cert1.pem').toString();
+// var ca = fs.readFileSync('/etc/letsencrypt/archive/jorys.io/chain1.pem').toString();
+// var credentials = {
+//   key: key,
+//   cert: cert,
+//   ca: ca
+// };
+
+// app.use(forceSSL);
+// http.createServer(app).listen(80);
+// https.createServer(credentials, app).listen(443);
+
 
 // Custom middleware
 function requireAdmin(req, res, next) {
@@ -104,8 +121,3 @@ function requireLogin(req, res, next) {
   if (req.session.user) next();
   else res.status(404).json(null);
 }
-
-// function requireOpemLogin(req, res, next) {
-//   if (req.session.opem_user) next();
-//   else res.status(404).json(null);
-// }
