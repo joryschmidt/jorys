@@ -24,6 +24,12 @@
   <body ng-app='syntax'>
     <div class="csheet-container">
       <nav class="navbar">
+        <div class="navbar__background">&nbsp;</div>
+        <input type="checkbox" name="navigation" id="nav-toggle" class="navbar__checkbox" />
+        <label for="nav-toggle" class="navbar__button">
+          <svg class="navbar__button--icon"><use xlink:href="sprite.svg#icon-menu"></use></svg>
+        </label>
+        
         <ul class="nav">
           <a href="/skillsquire/">            <li class="nav__item">Home</li></a>
           <a href="/skillsquire/#!/about">    <li class="nav__item">About</li></a>
