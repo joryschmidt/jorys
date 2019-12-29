@@ -25,8 +25,14 @@
   <body style='visibility: hidden; opacity: 0;' ng-app='ssq'>
     <div class="container">
       <nav class="navbar">
+        <div class="navbar__background">&nbsp;</div>
+        <input type="checkbox" name="navigation" id="nav-toggle" class="navbar__checkbox" />
+        <label for="nav-toggle" class="navbar__button">
+          <svg class="navbar__button--icon"><use xlink:href="css/sprite.svg#icon-menu"></use></svg>
+        </label>
+        
         <ul class="nav">
-          <a href="/skillsquire/"> <li class="nav__item">Home</li></a>
+          <a href="/skillsquire/">            <li class="nav__item">Home</li></a>
           <a href="/skillsquire/#!/about">    <li class="nav__item">About</li></a>
           <a href="/skillsquire/syntax">      <li class="nav__item">Cheatsheet</li></a>
           <a href="/skillsquire/#!/dashboard"><li class="nav__item" ng-show="userLoggedIn">Dashboard</li></a>
