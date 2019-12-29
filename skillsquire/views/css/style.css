@@ -138,6 +138,7 @@ input, textarea, select {
     position: fixed;
     top: 5rem;
     right: 0;
+    z-index: 5;
     display: none;
   }
 }
