@@ -17,6 +17,7 @@ $color-star: #d1c43e;
 // LAYOUT VARIABLES
 
 $default-border: 1px solid $grey;
+$top-margin: 5rem;
 
 *, *::before, *::after {
   margin: 0;
@@ -37,6 +38,10 @@ body {
   // to hide stuff before angular figures out what should and shouldn't be on the page
   visibility: hidden;
   opacity: 0;
+  
+  @include respond(land) {
+    margin-top: $top-margin;
+  }
 }
 
 a:link, a:hover, a:visited, a:active {

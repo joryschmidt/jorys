@@ -5,6 +5,9 @@
   display: grid;
   grid-template-columns: 25rem repeat(2, 1fr);
   
+  @include respond(tablet) {
+    grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
+  }
   
   &__heading {
     font-weight: 300;

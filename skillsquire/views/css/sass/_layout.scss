@@ -3,11 +3,63 @@
   background-color: $lightest-grey;
 }
 
+.navbar {
+  
+  &__checkbox {
+    display: none;
+  }
+  
+  &__button {
+    display: none;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    fill: #eee;
+    cursor: pointer;
+    
+    &--icon {
+      width: 3rem;
+      height: 3rem;
+    }
+    
+    @include respond(land) {
+      display: block;
+    }
+  }
+  
+  &__background {
+    display: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: $top-margin;
+    background-color: rgba($dark-grey, 0.9);
+    
+    @include respond(land) {
+      display: block;
+    }
+  }
+  
+  &__checkbox:checked ~ .nav {
+    display: flex;
+  }
+}
+
 .nav {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   background-color: rgba($dark-grey, 0.9);
+  
+  @include respond(land) {
+    flex-direction: column;
+    align-items: end;
+    position: fixed;
+    top: $top-margin;
+    right: 0;
+    
+    display: none;
+  }
   
   &__item {
     list-style: none;
@@ -15,16 +67,31 @@
     color: $lighter-grey;
     transition: background-color .1s;
     
+    @include respond(land) {
+      font-size: 1.4rem;
+    }
+    
     &:hover {
       background-color: $grey;
+    }
+  }
+  
+  @include respond(land) {
+    & > a {
+      width: 100%;
+      text-align: right;
     }
   }
 }
 
 .content {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
   padding: 0 2rem;
+  
+  &__column {
+    
+  }
   
   &-category {
     grid-template-columns: 1fr;
@@ -33,7 +100,7 @@
 
 .category {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
   width: 100%;
   
   &-heading {

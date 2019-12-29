@@ -6,7 +6,8 @@
 }
 
 @mixin container {
-  width: 120rem;
+  //width: 120rem;
+  max-width: 120rem;
   min-height: 100vh;
   margin: 0 auto;
   padding-bottom: 30rem;
@@ -23,5 +24,19 @@
   
   &:focus {
     background-color: $lighter-grey;
+  }
+}
+
+@mixin respond($break) {
+  @if $break == tablet {
+    @media only screen and (max-width: 56.25em) { @content } // 900px
+  }
+  
+  @if $break == land {
+    @media only screen and (max-width: 43.75em) { @content } // 700px
+  }
+  
+  @if $break == phone {
+    @media only screen and (max-width: 31.25em) { @content } // 500px
   }
 }

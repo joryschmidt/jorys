@@ -3,6 +3,10 @@
   justify-content: space-between;
   align-items: center;
   padding: .5rem 2rem;
+  
+  @include respond(phone) {
+    flex-direction: column;
+  }
 }
 
 .radio {
