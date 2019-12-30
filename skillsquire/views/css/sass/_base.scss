@@ -39,8 +39,13 @@ body {
   visibility: hidden;
   opacity: 0;
   
+  @include respond(laptop) {
+    font-size: 1.5rem;
+  }
+  
   @include respond(land) {
     margin-top: $top-margin;
+    font-size: 1.4rem;
   }
 }
 
