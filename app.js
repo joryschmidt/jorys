@@ -28,6 +28,8 @@ var app = express();
 
 // Middleware for session functionality, and req.body
 
+// app.use(forceSSL);
+
 app.use(sessions({
   cookieName: 'session',
   secret: process.env.JORYS_SESSION,
@@ -54,6 +56,7 @@ var skillsquire_user = require('./routes/skillsquire/user');
 app.use('/skillsquire/admin', requireAdmin, express.static(path.join(__dirname, 'skillsquire', 'views/admin_views')));
 app.use('/skillsquire/syntax', express.static(path.join(__dirname, 'skillsquire', 'views/syntax')));
 app.use('/skillsquire', express.static(path.join(__dirname, 'skillsquire', 'views')));
+
 
 app.use('/skillsquire/admin', requireAdmin, skillsquire_admin);
 app.use('/skillsquire/resource', skillsquire_resource);
@@ -84,6 +87,7 @@ app.use('/opem/', opem_main);
 // MAIN ROUTE
 
 
+
 app.use('/', express.static(__dirname));
 
 // DEV SERVER
@@ -94,16 +98,15 @@ app.listen(port, function() {
 });
 
 // PROD SERVER
-// var key = fs.readFileSync('/etc/letsencrypt/archive/jorys.io/privkey1.pem').toString(); 
-// var cert = fs.readFileSync('/etc/letsencrypt/archive/jorys.io/cert1.pem').toString();
-// var ca = fs.readFileSync('/etc/letsencrypt/archive/jorys.io/chain1.pem').toString();
+// var key = fs.readFileSync('/etc/letsencrypt/archive/jorys.io/privkey3.pem').toString(); 
+// var cert = fs.readFileSync('/etc/letsencrypt/archive/jorys.io/cert3.pem').toString();
+// var ca = fs.readFileSync('/etc/letsencrypt/archive/jorys.io/chain3.pem').toString();
 // var credentials = {
 //   key: key,
 //   cert: cert,
 //   ca: ca
 // };
 
-// app.use(forceSSL);
 // http.createServer(app).listen(80);
 // https.createServer(credentials, app).listen(443);
 
